@@ -1,0 +1,31 @@
+{
+  "name": "wordcloud",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --port 3001 --open",
+    "dev-docker": "vite --host --port 3001",
+    "build": "cross-env NODE_ENV=production vite-ssg build",
+    "build-dev": "cross-env NODE_ENV=dev vite-ssg build",
+    "preview": "vite preview --port 5001 --open",
+    "bp": "npm run build && npm run preview",
+    "bp-dev": "npm run build-dev && npm run preview"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "d3": "^7.0.1",
+    "vue": "^3.2.6",
+    "vue-i18n": "^9.1.7"
+  },
+  "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.2.10",
+    "@vue/server-renderer": "^3.2.10",
+    "@vueuse/head": "^0.6.0",
+    "cross-env": "^7.0.3",
+    "unplugin-vue-components": "^0.15.2",
+    "vite": "^2.5.2",
+    "vite-ssg": "^0.15.2",
+    "vue-router": "^4.0.11"
+  }
+}
