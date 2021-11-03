@@ -35,3 +35,16 @@ jobs:
           context: backend
           push: true
           tags: ghcr.io/leshkin/wordcloud-backend:latest
+
+      - name: Deploy to Docker swarm
+        uses: wshihadeh/docker-deployment-action@v1
+        with:
+          remote_docker_host: alexey@wordcloud.online
+          ssh_private_key: ${{ secrets.WORDCLOUD_SSH_PRIVATE_KEY }}
+          ssh_public_key: ${{ secrets.WORDCLOUD_SSH_PUBLIC_KEY }}
+          deployment_mode: docker-swarm
+          copy_stack_file: true
+          deploy_path: /wordcloud
+          stack_file_name: docker-compose.yml
+          keep_files: 5
+          args: wordcloud
