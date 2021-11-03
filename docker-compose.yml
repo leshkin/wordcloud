@@ -2,10 +2,10 @@ version: '3'
 
 services:
   frontend:
-    image: 1eshkin/wordcloud-frontend:0.1.0
+    image: 1eshkin/wordcloud-frontend:latest
 
   backend:
-    image: 1eshkin/wordcloud-backend:0.1.0
+    image: 1eshkin/wordcloud-backend:latest
     environment:
       - MAX_WORKERS=1
     volumes:
