@@ -39,7 +39,7 @@ jobs:
       - name: Deploy to Docker swarm
         uses: wshihadeh/docker-deployment-action@v1
         with:
-          remote_docker_host: wordcloud@wordcloud.online
+          remote_docker_host: alexey@wordcloud.online
           ssh_private_key: ${{ secrets.WORDCLOUD_SSH_PRIVATE_KEY }}
           ssh_public_key: ${{ secrets.WORDCLOUD_SSH_PUBLIC_KEY }}
           deployment_mode: docker-swarm
