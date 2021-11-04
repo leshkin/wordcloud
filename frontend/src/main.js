@@ -7,7 +7,7 @@ const messages = {
   en: {
     info: 'WordCloud allows you to build a word cloud online from any text and download the resulting image.',
     placeholder: 'Insert text to create a word cloud',
-    generate: 'Generate!',
+    generate: 'Generate',
     downloadPNG: 'Download PNG',
     errors: {
       textTooLong: 'The text is too long, please limit it to 10,000 characters.',
@@ -16,7 +16,7 @@ const messages = {
   ru: {
     info: 'WordCloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение.',
     placeholder: 'Вставьте текст для создания облака слов',
-    generate: 'Создать!',
+    generate: 'Создать',
     downloadPNG: 'Скачать PNG',
     errors: {
       textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.',
