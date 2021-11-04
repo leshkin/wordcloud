@@ -44,7 +44,7 @@ jobs:
           ssh_public_key: ${{ secrets.WORDCLOUD_SSH_PUBLIC_KEY }}
           deployment_mode: docker-swarm
           copy_stack_file: true
-          keep_files: 0
+          keep_files: 1
           deploy_path: wordcloud-test
           stack_file_name: docker-compose.yml
           args: wordcloud
