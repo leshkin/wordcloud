@@ -26,7 +26,7 @@ jobs:
         with:
           context: frontend
           push: true
-          tags: 1eshkin/wordcloud-frontend:0.2.6
+          tags: 1eshkin/wordcloud-frontend:0.2.7
 
       - name: Build and push backend
         uses: docker/build-push-action@v2
