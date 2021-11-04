@@ -37,7 +37,7 @@ jobs:
       #     tags: ghcr.io/leshkin/wordcloud-backend:latest
 
       - name: Deploy to Docker swarm
-        uses: wshihadeh/docker-deployment-action@v1
+        uses: wshihadeh/docker-deployment-action@v2
         with:
           remote_docker_host: alexey@wordcloud.online
           ssh_private_key: ${{ secrets.WORDCLOUD_SSH_PRIVATE_KEY }}
