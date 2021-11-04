@@ -45,5 +45,6 @@ jobs:
           deployment_mode: docker-swarm
           copy_stack_file: true
           keep_files: 0
+          deploy_path: /wordcloud-test
           stack_file_name: docker-compose.yml
           args: wordcloud
