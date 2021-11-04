@@ -2,7 +2,7 @@ version: '3'
 
 services:
   frontend:
-    image: 1eshkin/wordcloud-frontend:0.2.3
+    image: 1eshkin/wordcloud-frontend:0.2.4
 
   backend:
     image: 1eshkin/wordcloud-backend:0.1.0
