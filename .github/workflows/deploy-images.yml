@@ -26,14 +26,14 @@ jobs:
         with:
           context: frontend
           push: true
-          tags: 1eshkin/wordcloud-frontend:latest
+          tags: 1eshkin/wordcloud-frontend:0.1.1
 
       - name: Build and push backend
         uses: docker/build-push-action@v2
         with:
           context: backend
           push: true
-          tags: 1eshkin/wordcloud-backend:latest
+          tags: 1eshkin/wordcloud-backend:0.1.0
 
       - name: Deploy to Docker swarm
         uses: wshihadeh/docker-deployment-action@v2
