@@ -1,13 +1,15 @@
-## Run application in the development mode using Docker
+## Development
 
-1. Run
-
+1. Run backend
    ```bash
    docker-compose -f docker-compose.dev.yml up
    ```
 
-2. Open <http://localhost:8080>
-
+2. Run frontend
+   ```bash
+   cd frontend
+   npm run dev
+   ```
 ### Build images
 
 1. Build image for frontend

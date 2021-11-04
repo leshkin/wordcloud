@@ -7,8 +7,8 @@
     "build": "cross-env NODE_ENV=production vite-ssg build",
     "build-dev": "cross-env NODE_ENV=dev vite-ssg build",
     "preview": "vite preview --port 5001 --open",
-    "bp": "npm run build && npm run preview",
-    "bp-dev": "npm run build-dev && npm run preview"
+    "build-preview": "npm run build && npm run preview",
+    "build-preview-dev": "npm run build-dev && npm run preview"
   },
   "dependencies": {
     "axios": "^0.23.0",
