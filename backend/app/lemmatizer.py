@@ -1,11 +1,15 @@
-import spacy
 import langid
+import en_core_web_sm
+import ru_core_news_sm
+import fr_core_news_sm
+import de_core_news_sm
+import es_core_news_sm
 
-nlp_en = spacy.load("en_core_web_sm")
-nlp_ru = spacy.load("ru_core_news_sm")
-nlp_fr = spacy.load("fr_core_news_sm")
-nlp_de = spacy.load("de_core_news_sm")
-nlp_es = spacy.load("es_core_news_sm")
+nlp_en = en_core_web_sm.load()
+nlp_ru = ru_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
+nlp_fr = fr_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
+nlp_de = de_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
+nlp_es = es_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 
 def get_lemmas(text):
     lang = langid.classify(text)[0]
@@ -19,16 +23,27 @@ def get_lemmas(text):
         doc = nlp_es(text)
     else:
         doc = nlp_en(text)
-    lemmas =  [
-        token.lemma_ for token in doc
-            if token.is_stop == False and
-               token.pos_ != "PUNCT" and
-               token.pos_ != "ADP" and
-               token.pos_ != "NUM" and
-               token.pos_ != "SYM" and
-               token.pos_ != "AUX"
-    ]
+
+    for token in doc:
+        print(token.text, token.lemma_, token.pos_, token.shape_, token.is_stop)
+
+    lemmas = []
+    for token in doc:
+        if (token.is_stop == False and token.lemma_ != "-" and
+               (token.pos_ == "NOUN" or token.pos_ == "VERB" or token.pos_ == "ADJ" or token.pos_ == "NUM"
+                or token.pos_ == "ADP" or token.pos_ == "PRON" or token.pos_ == "PROPN")
+           ):
+            lemmas.append(capitalize_by_shape(token)) 
+
     return frequency_bag_from_list(lemmas)
+
+def capitalize_by_shape(token):
+    if token.shape_.startswith("XX"):
+        return token.lemma_.upper()
+    elif token.pos_ == "PROPN":
+        return token.lemma_.capitalize()
+    else:
+        return token.lemma_
 
 def frequency_bag_from_list(word_list):
     frequency_bag = dict()

@@ -10,6 +10,38 @@
    cd frontend
    npm run dev
    ```
+
+## Run application in the development mode using Docker
+
+1. Run
+
+   ```bash
+   docker-compose -f docker-compose.dev.yml up
+   ```
+
+2. Open <http://localhost:8080>
+
+## Install backend to virtual environment
+
+1. Go to `backend` folder
+
+2. Create virtual environment
+
+   ```bash
+   python3 -m venv env
+   ```
+
+3. Activate venv
+
+   ```bash
+   source env/bin/activate
+   ```
+
+4. Install packages
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 ### Build images
 
 1. Build image for frontend
