@@ -15,6 +15,15 @@
     case '/ru':
       locale.value = 'ru'
       break
+    case '/fr':
+      locale.value = 'fr'
+      break
+    case '/de':
+      locale.value = 'de'
+      break
+    case '/es':
+      locale.value = 'es'
+      break
     default:
       locale.value = 'en'
   }
