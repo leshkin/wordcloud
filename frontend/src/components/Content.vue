@@ -132,10 +132,13 @@
     <div class="content has-text-centered">
       <p>
         <router-link to="/en">English</router-link>
+        <router-link to="/es" class="ml-3">Español</router-link>
+        <router-link to="/fr" class="ml-3">Français</router-link>
+        <router-link to="/de" class="ml-3">Deutsch</router-link>
         <router-link to="/ru" class="ml-3">Русский</router-link>
       </p>
       <p>
-        Based on <a href="https://github.com/jasondavies/d3-cloud">d3-cloud</a> library, view <a href="https://github.com/jasondavies/d3-cloud/blob/master/LICENSE">license</a>
+        Based on <a href="https://github.com/jasondavies/d3-cloud">d3-cloud</a> and <a href="https://github.com/explosion/spaCy">spaCy</a> libraries
       </p>
     </div>
   </footer>
