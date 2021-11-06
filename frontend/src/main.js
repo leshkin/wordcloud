@@ -49,6 +49,15 @@ const messages = {
       textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.',
     }
   },
+  pt: {
+    info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante.',
+    placeholder: 'Insira texto para criar uma nuvem de palavras',
+    generate: 'Gerar',
+    downloadPNG: 'Baixar PNG',
+    errors: {
+      textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.',
+    }
+  },
 }
 
 const i18n = createI18n({
@@ -64,6 +73,7 @@ const routes = [
   { path: '/es', component: Content, props: { lang: 'es' } },
   { path: '/de', component: Content, props: { lang: 'de' } },
   { path: '/fr', component: Content, props: { lang: 'fr' } },
+  { path: '/pt', component: Content, props: { lang: 'pt' } },
 ]
 
 export const createApp = ViteSSG(App, { routes }, ({ app }) => {

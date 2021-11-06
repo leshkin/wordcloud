@@ -24,6 +24,9 @@
     case '/es':
       locale.value = 'es'
       break
+    case '/pt':
+      locale.value = 'pt'
+      break
     default:
       locale.value = 'en'
   }
@@ -117,7 +120,7 @@
       </article>
       <div class="field">
         <div class="control">
-          <textarea class="textarea" v-model="text" :placeholder="t('info')" rows="10"></textarea>
+          <textarea class="textarea" v-model="text" :placeholder="t('placeholder')" rows="10"></textarea>
         </div>
       </div>
       <div class="field has-text-centered">
@@ -142,6 +145,7 @@
       <p>
         <router-link to="/en">English</router-link>
         <router-link to="/es" class="ml-3">Español</router-link>
+        <router-link to="/pt" class="ml-3">Português</router-link>
         <router-link to="/fr" class="ml-3">Français</router-link>
         <router-link to="/de" class="ml-3">Deutsch</router-link>
         <router-link to="/ru" class="ml-3">Русский</router-link>

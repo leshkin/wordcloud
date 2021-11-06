@@ -4,12 +4,14 @@ import ru_core_news_sm
 import fr_core_news_sm
 import de_core_news_sm
 import es_core_news_sm
+import pt_core_news_sm
 
 nlp_en = en_core_web_sm.load()
 nlp_ru = ru_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_fr = fr_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_de = de_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_es = es_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
+nlp_pt = pt_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 
 def get_lemmas(text):
     lang = langid.classify(text)[0]
@@ -21,6 +23,8 @@ def get_lemmas(text):
         doc = nlp_de(text)
     elif lang == "es":
         doc = nlp_es(text)
+    elif lang == "pt":
+        doc = nlp_pt(text)
     else:
         doc = nlp_en(text)
 
@@ -38,7 +42,7 @@ def get_lemmas(text):
     return frequency_bag_from_list(lemmas)
 
 def capitalize_by_shape(token):
-    if token.shape_.startswith("XX"):
+    if token.shape_.startswith("XX") or token.shape_.startswith("X.X."):
         return token.lemma_.upper()
     elif token.pos_ == "PROPN":
         return token.lemma_.capitalize()
