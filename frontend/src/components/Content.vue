@@ -27,6 +27,9 @@
     case '/pt':
       locale.value = 'pt'
       break
+    case '/zh':
+      locale.value = 'zh'
+      break
     default:
       locale.value = 'en'
   }
@@ -151,6 +154,7 @@
         <router-link to="/fr" class="ml-3 is-inline-block">Français</router-link>
         <router-link to="/de" class="ml-3 is-inline-block">Deutsch</router-link>
         <router-link to="/ru" class="ml-3 is-inline-block">Русский</router-link>
+        <router-link to="/zh" class="ml-3 is-inline-block">中文</router-link>
       </p>
       <p>
         Based on <a href="https://github.com/jasondavies/d3-cloud">d3-cloud</a> and <a href="https://github.com/explosion/spaCy">spaCy</a> libraries

@@ -58,6 +58,15 @@ const messages = {
       textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.',
     }
   },
+  zh: {
+    info: '词云允许您从任何文本在线构建词云并下载生成的图像。',
+    placeholder: '插入文本以创建词云',
+    generate: '产生',
+    downloadPNG: '下载PNG',
+    errors: {
+      textTooLong: '文本太长，请将其限制为 10,000 个字符。',
+    }
+  },
 }
 
 const i18n = createI18n({
@@ -74,6 +83,7 @@ const routes = [
   { path: '/de', component: Content, props: { lang: 'de' } },
   { path: '/fr', component: Content, props: { lang: 'fr' } },
   { path: '/pt', component: Content, props: { lang: 'pt' } },
+  { path: '/zh', component: Content, props: { lang: 'zh' } },
 ]
 
 export const createApp = ViteSSG(App, { routes }, ({ app }) => {

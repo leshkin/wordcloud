@@ -5,6 +5,7 @@ import fr_core_news_sm
 import de_core_news_sm
 import es_core_news_sm
 import pt_core_news_sm
+import zh_core_web_sm
 
 nlp_en = en_core_web_sm.load()
 nlp_ru = ru_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
@@ -12,6 +13,7 @@ nlp_fr = fr_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_de = de_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_es = es_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_pt = pt_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
+nlp_zh = zh_core_web_sm.load(disable=["ner"])
 
 def get_lemmas(text):
     lang = langid.classify(text)[0]
@@ -25,19 +27,24 @@ def get_lemmas(text):
         doc = nlp_es(text)
     elif lang == "pt":
         doc = nlp_pt(text)
+    elif lang == "zh":
+        doc = nlp_zh(text)
     else:
         doc = nlp_en(text)
 
     for token in doc:
         print(token.text, token.lemma_, token.pos_, token.shape_, token.is_stop)
-
+    print(lang)
     lemmas = []
     for token in doc:
         if (token.is_stop == False and token.lemma_ != "-" and
                (token.pos_ == "NOUN" or token.pos_ == "VERB" or token.pos_ == "ADJ" or token.pos_ == "NUM"
                 or token.pos_ == "ADP" or token.pos_ == "PRON" or token.pos_ == "PROPN")
            ):
-            lemmas.append(capitalize_by_shape(token)) 
+            if lang == "zh":
+                lemmas.append(token.text)
+            else:
+                lemmas.append(capitalize_by_shape(token)) 
 
     return frequency_bag_from_list(lemmas)
 
