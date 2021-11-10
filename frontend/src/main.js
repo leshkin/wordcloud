@@ -59,7 +59,7 @@ const messages = {
     }
   },
   zh: {
-    info: '词云允许您从任何文本在线构建词云并下载生成的图像。',
+    info: 'Word Cloud 允许您从任何文本在线构建词云并下载生成的图像。',
     placeholder: '插入文本以创建词云',
     generate: '产生',
     downloadPNG: '下载PNG',
