@@ -33,7 +33,7 @@ jobs:
         with:
           context: backend
           push: true
-          tags: 1eshkin/wordcloud-backend:0.4.0
+          tags: 1eshkin/wordcloud-backend:0.4.1
 
       - name: Deploy to Docker swarm
         uses: wshihadeh/docker-deployment-action@v2

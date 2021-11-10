@@ -32,9 +32,6 @@ def get_lemmas(text):
     else:
         doc = nlp_en(text)
 
-    for token in doc:
-        print(token.text, token.lemma_, token.pos_, token.shape_, token.is_stop)
-    print(lang)
     lemmas = []
     for token in doc:
         if (token.is_stop == False and token.lemma_ != "-" and
