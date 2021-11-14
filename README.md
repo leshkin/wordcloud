@@ -1,3 +1,9 @@
+# Word Cloud
+
+Word Cloud allows you to build a word cloud online from any text and download the resulting image.
+
+[![GitHub Super-Linter](https://github.com/leshkin/wordcloud.online/workflows/Super-Linter/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 ## Development
 
 1. Run backend

@@ -1,11 +1,29 @@
-name: Create and publish a Docker images
+name: Build, push and deploy Docker images
 
 on:
   push:
     branches: ['main']
 
 jobs:
-  build-and-push-image:
+  lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Runs the Super-Linter action
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-and-push-docker-images:
+    name: Build and push Docker images
+    needs: [lint]
     runs-on: ubuntu-latest
     permissions:
       contents: read
