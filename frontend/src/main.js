@@ -9,7 +9,7 @@ const messages = {
     placeholder: 'Insert text to create a word cloud',
     generate: 'Generate',
     errors: {
-      textTooLong: 'The text is too long, please limit it to 10,000 characters.',
+      textTooLong: 'The text is too long, please limit it to 10,000 characters.'
     }
   },
   ru: {
@@ -17,7 +17,7 @@ const messages = {
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать',
     errors: {
-      textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.',
+      textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.'
     }
   },
   es: {
@@ -25,7 +25,7 @@ const messages = {
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar',
     errors: {
-      textTooLong: 'El texto es demasiado largo, limítelo a 10,000 caracteres.',
+      textTooLong: 'El texto es demasiado largo, limítelo a 10,000 caracteres.'
     }
   },
   de: {
@@ -33,7 +33,7 @@ const messages = {
     placeholder: 'Fügen Sie Text ein, um eine Wortwolke zu erstellen',
     generate: 'Generieren',
     errors: {
-      textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 10.000 Zeichen.',
+      textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 10.000 Zeichen.'
     }
   },
   fr: {
@@ -41,7 +41,7 @@ const messages = {
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire',
     errors: {
-      textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.',
+      textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.'
     }
   },
   pt: {
@@ -49,7 +49,7 @@ const messages = {
     placeholder: 'Insira texto para criar uma nuvem de palavras',
     generate: 'Gerar',
     errors: {
-      textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.',
+      textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.'
     }
   },
   zh: {
@@ -57,15 +57,15 @@ const messages = {
     placeholder: '插入文本以创建词云',
     generate: '产生',
     errors: {
-      textTooLong: '文本太长，请将其限制为 10,000 个字符。',
+      textTooLong: '文本太长，请将其限制为 10,000 个字符。'
     }
-  },
+  }
 }
 
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
-  messages,
+  messages
 })
 
 const routes = [
@@ -76,7 +76,7 @@ const routes = [
   { path: '/de', component: Content, props: { lang: 'de' } },
   { path: '/fr', component: Content, props: { lang: 'fr' } },
   { path: '/pt', component: Content, props: { lang: 'pt' } },
-  { path: '/zh', component: Content, props: { lang: 'zh' } },
+  { path: '/zh', component: Content, props: { lang: 'zh' } }
 ]
 
 export const createApp = ViteSSG(App, { routes }, ({ app }) => {

@@ -1,10 +1,10 @@
 import langid
-import en_core_web_sm
-import ru_core_news_sm
-import fr_core_news_sm
 import de_core_news_sm
+import en_core_web_sm
 import es_core_news_sm
+import fr_core_news_sm
 import pt_core_news_sm
+import ru_core_news_sm
 import zh_core_web_sm
 
 nlp_en = en_core_web_sm.load()
@@ -14,6 +14,7 @@ nlp_de = de_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_es = es_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_pt = pt_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_zh = zh_core_web_sm.load(disable=["ner"])
+
 
 def get_lemmas(text):
     lang = langid.classify(text)[0]
@@ -34,10 +35,19 @@ def get_lemmas(text):
 
     lemmas = []
     for token in doc:
-        if (token.is_stop == False and token.lemma_ != "-" and
-               (token.pos_ == "NOUN" or token.pos_ == "VERB" or token.pos_ == "ADJ" or token.pos_ == "NUM"
-                or token.pos_ == "ADP" or token.pos_ == "PRON" or token.pos_ == "PROPN")
-           ):
+        if (
+            token.is_stop == False
+            and token.lemma_ != "-"
+            and (
+                token.pos_ == "NOUN"
+                or token.pos_ == "VERB"
+                or token.pos_ == "ADJ"
+                or token.pos_ == "NUM"
+                or token.pos_ == "ADP"
+                or token.pos_ == "PRON"
+                or token.pos_ == "PROPN"
+            )
+        ):
             if lang == "zh":
                 lemmas.append(token.text)
             else:
@@ -57,6 +67,6 @@ def frequency_bag_from_list(word_list):
     frequency_bag = []
     unique_lemmas = list(set(word_list))
     for i in unique_lemmas:
-        frequency_bag.append({ "name": i, "count": word_list.count(i)})
+        frequency_bag.append({"name": i, "count": word_list.count(i)})
     sorted_frequency_bag = sorted(frequency_bag, key=lambda x: x["count"], reverse=True)
     return sorted_frequency_bag

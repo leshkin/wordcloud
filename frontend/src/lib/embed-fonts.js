@@ -3,13 +3,13 @@ export async function embedFonts (url) {
 }
 
 function embedFontFiles (cssText) {
-  var fontLocations = cssText.match(/https:\/\/[^)]+/g)
-  var fontLoadedPromises = fontLocations.map(function (location) {
+  const fontLocations = cssText.match(/https:\/\/[^)]+/g)
+  const fontLoadedPromises = fontLocations.map(function (location) {
     return new Promise(function (resolve, reject) {
       fetch(location).then(function (res) {
         return res.blob()
       }).then(function (blob) {
-        var reader = new FileReader()
+        const reader = new FileReader()
         reader.addEventListener('load', function () {
           // Side Effect
           cssText = cssText.replace(location, this.result)

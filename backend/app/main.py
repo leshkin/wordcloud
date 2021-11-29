@@ -1,6 +1,5 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from typing import Optional
 
 import app.lemmatizer as lemmatizer
 from fastapi import FastAPI
@@ -16,8 +15,10 @@ logger.addHandler(handler)
 
 app = FastAPI()
 
+
 class Request(BaseModel):
     text: str
+
 
 @app.post("/lemmatize")
 def analyze(req: Request):
