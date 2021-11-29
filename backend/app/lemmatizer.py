@@ -1,8 +1,8 @@
-import langid
 import de_core_news_sm
 import en_core_web_sm
 import es_core_news_sm
 import fr_core_news_sm
+import langid
 import pt_core_news_sm
 import ru_core_news_sm
 import zh_core_web_sm
@@ -36,7 +36,7 @@ def get_lemmas(text):
     lemmas = []
     for token in doc:
         if (
-            token.is_stop == False
+            token.is_stop is False
             and token.lemma_ != "-"
             and (
                 token.pos_ == "NOUN"
@@ -51,9 +51,10 @@ def get_lemmas(text):
             if lang == "zh":
                 lemmas.append(token.text)
             else:
-                lemmas.append(capitalize_by_shape(token)) 
+                lemmas.append(capitalize_by_shape(token))
 
     return frequency_bag_from_list(lemmas)
+
 
 def capitalize_by_shape(token):
     if token.shape_.startswith("XX") or token.shape_.startswith("X.X."):
@@ -62,6 +63,7 @@ def capitalize_by_shape(token):
         return token.lemma_.capitalize()
     else:
         return token.lemma_
+
 
 def frequency_bag_from_list(word_list):
     frequency_bag = []
