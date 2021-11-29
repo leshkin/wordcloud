@@ -11,6 +11,7 @@
     "build-preview-dev": "npm run build-dev && npm run preview"
   },
   "dependencies": {
+    "@vueuse/core": "^6.8.0",
     "axios": "^0.23.0",
     "d3": "^7.0.1",
     "vue": "^3.2.6",
@@ -21,7 +22,6 @@
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.2.10",
     "@vue/server-renderer": "^3.2.10",
-    "@vueuse/head": "^0.6.0",
     "cross-env": "^7.0.3",
     "unplugin-vue-components": "^0.15.2",
     "vite": "^2.5.2",

@@ -8,16 +8,14 @@ const messages = {
     info: 'Word Cloud allows you to build a word cloud online from any text and download the resulting image.',
     placeholder: 'Insert text to create a word cloud',
     generate: 'Generate',
-    downloadPNG: 'Download PNG',
     errors: {
       textTooLong: 'The text is too long, please limit it to 10,000 characters.',
     }
   },
   ru: {
-    info: 'Word Cloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение.',
+    info: 'Word Cloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение. При этом слова текста приводятся к нормальной форме (лемматизируются).',
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать',
-    downloadPNG: 'Скачать PNG',
     errors: {
       textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.',
     }
@@ -26,7 +24,6 @@ const messages = {
     info: 'Word Cloud le permite crear una nube de palabras en línea a partir de cualquier texto y descargar la imagen resultante.',
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar',
-    downloadPNG: 'Descargar PNG',
     errors: {
       textTooLong: 'El texto es demasiado largo, limítelo a 10,000 caracteres.',
     }
@@ -35,7 +32,6 @@ const messages = {
     info: 'Mit Word Cloud können Sie aus jedem Text online eine Wortwolke erstellen und das resultierende Bild herunterladen.',
     placeholder: 'Fügen Sie Text ein, um eine Wortwolke zu erstellen',
     generate: 'Generieren',
-    downloadPNG: 'PNG herunterladen',
     errors: {
       textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 10.000 Zeichen.',
     }
@@ -44,7 +40,6 @@ const messages = {
     info: 'Word Cloud vous permet de créer un nuage de mots en ligne à partir de n\'importe quel texte et de télécharger l\'image résultante.',
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire',
-    downloadPNG: 'Télécharger PNG',
     errors: {
       textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.',
     }
@@ -53,7 +48,6 @@ const messages = {
     info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante.',
     placeholder: 'Insira texto para criar uma nuvem de palavras',
     generate: 'Gerar',
-    downloadPNG: 'Baixar PNG',
     errors: {
       textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.',
     }
@@ -62,7 +56,6 @@ const messages = {
     info: 'Word Cloud 允许您从任何文本在线构建词云并下载生成的图像。',
     placeholder: '插入文本以创建词云',
     generate: '产生',
-    downloadPNG: '下载PNG',
     errors: {
       textTooLong: '文本太长，请将其限制为 10,000 个字符。',
     }

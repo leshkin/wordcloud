@@ -3,6 +3,7 @@
   import { useI18n } from 'vue-i18n'
   import { useRouter } from 'vue-router'
   import axios from 'axios'
+  import { FONTS, COLOR_PALETTES } from '@/config.js'
 
   const { t, locale } = useI18n({ useScope: 'global' })
 
@@ -10,6 +11,8 @@
   let isCreated = ref(false)
   let isError = ref(false)
   let isLoading = ref(false)
+  let font = ref(FONTS[0])
+  let colorPalette = ref(COLOR_PALETTES[0])
 
   switch (router.currentRoute.value.path) {
     case '/ru':
@@ -48,18 +51,23 @@
     }
   )
 
-  words.value = text.value.split(' ')
-
   const generate = async () => {
     isCreated.value = false
     isError.value = false
     isLoading.value = true
     const response = await axios.post('/lemmatize', { text: text.value})
-    console.log(response.data)
     isLoading.value = false
     if (!response.data.error) {
-      words.value = response.data
+      words.value = []
+      response.data.forEach(el => {
+        words.value.push({
+          name: el.name,
+          count: el.count,
+          visible: true
+        })
+      })
       isCreated.value = true
+      document.querySelector('#customization').scrollIntoView({ behavior: 'smooth' })
     } else {
       isError.value = true
     }
@@ -92,7 +100,7 @@
     let url = DOMURL.createObjectURL(svgBlob)
 
     img.onload = function () {
-      ctx.drawImage(img, 0, 0, 500, 500)
+      ctx.drawImage(img, 0, 0, 1500, 1500)
       DOMURL.revokeObjectURL(url)
 
       let imgURI = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
@@ -119,8 +127,8 @@
           <article v-if="isError" class="message is-danger">
             <div class="message-body">{{ t('errors.textTooLong') }}</div>
           </article>
-          <article class="message is-black">
-            <div class="message-body">{{ t('info') }}</div>
+          <article class="message is-warning">
+            <div class="message-body has-text-black">{{ t('info') }}</div>
           </article>
           <div class="field">
             <div class="control">
@@ -132,13 +140,50 @@
               <button class="button is-link" :class="{'is-loading': isLoading}" @click="generate()">{{ t('generate') }}</button>
             </div>
           </div>
+          <div id="customization" class="message is-info">
+            <div class="message-body">
+              <div class="columns">
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Font</label>
+                    <div class="control">
+                      <font-dropdown v-model="font"></font-dropdown>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Color palette</label>
+                    <div class="control">
+                      <color-dropdown v-model="colorPalette"></color-dropdown>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="field">
+                    <label class="label">Words</label>
+                    <div class="control">
+                      <word-dropdown v-model="words"></word-dropdown>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <client-only>
-            <word-cloud :words="words"></word-cloud>
-            <canvas id="canvas" class="is-hidden" width="500" height="500"></canvas>
+            <word-cloud :words="words" :font="font" :colorPalette="colorPalette"></word-cloud>
+            <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
           </client-only>
-          <div class="field has-text-centered">
-            <div class="control">
-              <button v-if="isCreated" class="button is-success" @click="downloadPNG()">{{ t('downloadPNG') }}</button>
+          <div class="field">
+            <div class="control has-text-centered">
+              <button v-if="isCreated" class="button is-success" @click="downloadPNG()">
+                <span class="icon-text">
+                  <span class="icon">
+                    <span class="material-icons">file_download</span>
+                  </span>
+                  <span>PNG</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -148,13 +193,13 @@
   <footer class="footer mt-3">
     <div class="content has-text-centered">
       <p>
-        <router-link to="/en" class="is-inline-block">English</router-link>
-        <router-link to="/es" class="ml-3 is-inline-block">Español</router-link>
-        <router-link to="/pt" class="ml-3 is-inline-block">Português</router-link>
-        <router-link to="/fr" class="ml-3 is-inline-block">Français</router-link>
-        <router-link to="/de" class="ml-3 is-inline-block">Deutsch</router-link>
-        <router-link to="/ru" class="ml-3 is-inline-block">Русский</router-link>
-        <router-link to="/zh" class="ml-3 is-inline-block">中文</router-link>
+        <a href="/en" class="is-inline-block">English</a>
+        <a href="/es" class="ml-3 is-inline-block">Español</a>
+        <a href="/pt" class="ml-3 is-inline-block">Português</a>
+        <a href="/fr" class="ml-3 is-inline-block">Français</a>
+        <a href="/de" class="ml-3 is-inline-block">Deutsch</a>
+        <a href="/ru" class="ml-3 is-inline-block">Русский</a>
+        <a href="/zh" class="ml-3 is-inline-block">中文</a>
       </p>
       <p>
         Based on <a href="https://github.com/jasondavies/d3-cloud">d3-cloud</a> and <a href="https://github.com/explosion/spaCy">spaCy</a> libraries
