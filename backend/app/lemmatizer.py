@@ -54,9 +54,9 @@ def capitalize_by_shape(token):
         return token.lemma_
 
 def frequency_bag_from_list(word_list):
-    frequency_bag = dict()
-    unique_lemmas = sorted(list(set(word_list)))
+    frequency_bag = []
+    unique_lemmas = list(set(word_list))
     for i in unique_lemmas:
-        frequency_bag[i] = word_list.count(i)
-    sorted_fr_bag = sorted(frequency_bag.items(), key=lambda x: x[1], reverse=True)
-    return sorted_fr_bag
+        frequency_bag.append({ "name": i, "count": word_list.count(i)})
+    sorted_frequency_bag = sorted(frequency_bag, key=lambda x: x["count"], reverse=True)
+    return sorted_frequency_bag
