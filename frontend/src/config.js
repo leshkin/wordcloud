@@ -56,6 +56,6 @@ export const COLOR_PALETTES = [
 
 const GOOGLE_FONTS_URL = 'https://fonts.googleapis.com/css2?display=swap'
 
-export function getFontURL(font) {
+export function getFontURL (font) {
   return GOOGLE_FONTS_URL + '&family=' + font.family.replaceAll(' ', '+')
 }
