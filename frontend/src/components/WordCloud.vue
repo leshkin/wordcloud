@@ -3,13 +3,15 @@ import { watch } from 'vue'
 import { select } from 'd3'
 import cloud from '/src/lib/d3-cloud.js'
 import { embedFonts } from '/src/lib/embed-fonts.js'
+import { getFontURL } from '/src/config.js'
 
 const props = defineProps({ words: Array, font: String, colorPalette: Object })
+const emit = defineEmits(['update'])
 
 watch(
   props,
   async (props) => {
-    const css = await embedFonts(document.getElementById('fonturl').href)
+    const css = await embedFonts(getFontURL(props.font))
     const words = props.words.filter(w => w.visible)
     const ratio = 100 / words[0].count
     var layout = cloud()
@@ -19,7 +21,7 @@ watch(
           return { text: d.name, size: 10 + ratio * d.count }
         })
       )
-      .font(props.font)
+      .font(props.font.family)
       .fontSize(function (d) {
         return d.size
       })
@@ -54,7 +56,7 @@ watch(
           .style('font-size', function (d) {
             return d.size + 'px'
           })
-          .style('font-family', props.font)
+          .style('font-family', props.font.family)
           .style('fill', function() {
             return props.colorPalette.colors[Math.floor( Math.random() * props.colorPalette.colors.length )]
           })
@@ -65,6 +67,8 @@ watch(
           .text(function (d) {
             return d.text
           })
+
+      emit('update')
     }
   }
 )

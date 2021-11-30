@@ -29,8 +29,8 @@
   <div class="dropdown" :class="{'is-active': isActive}" ref="dropdown">
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu"
-              @click="open()" :style="{'font-family': currentFont}">
-        <span>{{ currentFont }}</span>
+              @click="open()" :style="{'font-family': currentFont.family}">
+        <span>{{ currentFont.family }}</span>
         <span class="icon is-small">
           <span class="material-icons">
             expand_more
@@ -43,9 +43,9 @@
         <div v-for="font in FONTS"
              :key="font" class="dropdown-item"
              @click="select(font)"
-             :class="{'has-background-info-light': font === currentFont}"
-             :style="{'font-family': font}">
-          {{ font }}
+             :class="{'has-background-info-light': font.family === currentFont.family}"
+             :style="{'font-family': font.family}">
+          {{ font.family }}
         </div>
       </div>
     </div>

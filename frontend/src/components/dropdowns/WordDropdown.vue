@@ -17,7 +17,6 @@
   }
 
   const select = (word) => {
-    console.log(word.visible)
     word.visible = !word.visible
     emit('update:modelValue', props.modelValue)
   }

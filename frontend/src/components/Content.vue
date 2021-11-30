@@ -56,8 +56,7 @@
     isError.value = false
     isLoading.value = true
     const response = await axios.post('/lemmatize', { text: text.value})
-    isLoading.value = false
-    if (!response.data.error) {
+    if (!response.data.error) { 
       words.value = []
       response.data.forEach(el => {
         words.value.push({
@@ -66,11 +65,15 @@
           visible: true
         })
       })
-      isCreated.value = true
-      document.querySelector('#customization').scrollIntoView({ behavior: 'smooth' })
     } else {
       isError.value = true
     }
+  }
+
+  const update = () => {
+    isCreated.value = true
+    isLoading.value = false
+    document.querySelector('#customization').scrollIntoView({ behavior: 'smooth' })
   }
 
   const triggerDownload = (imgURI) => {
@@ -171,7 +174,7 @@
             </div>
           </div>
           <client-only>
-            <word-cloud :words="words" :font="font" :colorPalette="colorPalette"></word-cloud>
+            <word-cloud :words="words" :font="font" :colorPalette="colorPalette" @update="update()"></word-cloud>
             <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
           </client-only>
           <div class="field">

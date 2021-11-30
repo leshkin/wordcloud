@@ -1,12 +1,32 @@
 export const FONTS = [
-  'Roboto',
-  'Lobster',
-  'Alfa Slab One',
-  'Bebas Neue',
-  'Source Serif Pro'
+  {
+    family: 'Lobster',
+    lang: ['latin']
+  },
+  {
+    family: 'Roboto',
+    lang: ['latin'] // todo: add other alphabets
+  },
+  {
+    family: 'Alfa Slab One',
+    lang: ['latin']
+  },
+  {
+    family: 'Bebas Neue',
+    lang: ['latin']
+  },
+  {
+    family: 'Source Serif Pro',
+    lang: ['latin']
+  }
 ]
 
 export const COLOR_PALETTES = [
+  {
+    name: 'contrasting-1',
+    colors: ['#e76f3d', '#feab6b', '#f3e9e7', '#9bcfe0', '#00a7c7'],
+    backgroundColor: '#000000'
+  },
   {
     name: 'warm-1',
     colors: ['#c6c3b3', '#ccaf9b', '#a06b39', '#873c1e', '#312921'],
@@ -23,11 +43,6 @@ export const COLOR_PALETTES = [
     backgroundColor: '#000000'
   },
   {
-    name: 'contrasting-1',
-    colors: ['#e76f3d', '#feab6b', '#f3e9e7', '#9bcfe0', '#00a7c7'],
-    backgroundColor: '#000000'
-  },
-  {
     name: 'black',
     colors: ['#000000'],
     backgroundColor: '#ffffff'
@@ -38,3 +53,9 @@ export const COLOR_PALETTES = [
     backgroundColor: '#000000'
   }
 ]
+
+const GOOGLE_FONTS_URL = 'https://fonts.googleapis.com/css2?display=swap'
+
+export function getFontURL(font) {
+  return GOOGLE_FONTS_URL + '&family=' + font.family.replaceAll(' ', '+')
+}
