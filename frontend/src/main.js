@@ -5,7 +5,7 @@ import Content from './components/Content.vue'
 
 const messages = {
   en: {
-    info: 'Word Cloud allows you to build a word cloud online from any text and download the resulting image.',
+    info: 'Word Cloud allows you to build a word cloud online from any text and download the resulting image. The words of the text are lemmatized.',
     placeholder: 'Insert text to create a word cloud',
     generate: 'Generate',
     errors: {
@@ -21,7 +21,7 @@ const messages = {
     }
   },
   es: {
-    info: 'Word Cloud le permite crear una nube de palabras en línea a partir de cualquier texto y descargar la imagen resultante.',
+    info: 'Word Cloud le permite crear una nube de palabras en línea a partir de cualquier texto y descargar la imagen resultante. Las palabras del texto están lematizadas.',
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar',
     errors: {
@@ -29,7 +29,7 @@ const messages = {
     }
   },
   de: {
-    info: 'Mit Word Cloud können Sie aus jedem Text online eine Wortwolke erstellen und das resultierende Bild herunterladen.',
+    info: 'Mit Word Cloud können Sie aus jedem Text online eine Wortwolke erstellen und das resultierende Bild herunterladen. Die Wörter des Textes sind lemmatisiert.',
     placeholder: 'Fügen Sie Text ein, um eine Wortwolke zu erstellen',
     generate: 'Generieren',
     errors: {
@@ -37,7 +37,7 @@ const messages = {
     }
   },
   fr: {
-    info: 'Word Cloud vous permet de créer un nuage de mots en ligne à partir de n\'importe quel texte et de télécharger l\'image résultante.',
+    info: 'Word Cloud vous permet de créer un nuage de mots en ligne à partir de n\'importe quel texte et de télécharger l\'image résultante. Les mots du texte sont lemmatisés.',
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire',
     errors: {
@@ -45,7 +45,7 @@ const messages = {
     }
   },
   pt: {
-    info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante.',
+    info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante. As palavras do texto são lematizadas.',
     placeholder: 'Insira texto para criar uma nuvem de palavras',
     generate: 'Gerar',
     errors: {
@@ -53,7 +53,7 @@ const messages = {
     }
   },
   zh: {
-    info: 'Word Cloud 允许您从任何文本在线构建词云并下载生成的图像。',
+    info: 'Word Cloud 允许您从任何文本在线构建词云并下载生成的图像。文本的单词被词形还原。',
     placeholder: '插入文本以创建词云',
     generate: '产生',
     errors: {
