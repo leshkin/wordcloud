@@ -129,79 +129,75 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item is-size-1 has-text-weight-bold ff-lobster" href="https://wordcloud.online">
+      <span class="navbar-item is-size-1 has-text-grey-darker has-text-weight-bold ff-lobster">
         Word Cloud
-      </a>
+      </span>
     </div>
   </nav>
-  <section>
-    <div class="columns is-centered is-desktop">
-      <div class="column is-half">
-        <div class="container m-2">
-          <article v-if="isError" class="message is-danger">
-            <div class="message-body">{{ t('errors.textTooLong') }}</div>
-          </article>
-          <article class="message is-warning">
-            <div class="message-body has-text-black">{{ t('info') }}</div>
-          </article>
-          <div class="field">
-            <div class="control">
-              <textarea class="textarea" v-model="text" :placeholder="t('placeholder')" rows="10"></textarea>
-            </div>
-          </div>
-          <div class="field has-text-centered">
-            <div class="control">
-              <button class="button is-black"
-                      :class="{'is-loading': isLoading}"
-                      @click="generate()">{{ t('generate') }}</button>
-            </div>
-          </div>
-          <div id="customization" class="message is-success">
-            <div class="message-body">
-              <div class="columns">
-                <div class="column">
-                  <div class="field">
-                    <label class="label">{{ t('font') }}</label>
-                    <div class="control">
-                      <font-dropdown v-model="font"></font-dropdown>
-                    </div>
-                  </div>
+  <section class="m-1">
+    <div class="container is-max-desktop">
+      <article v-if="isError" class="message is-danger">
+        <div class="message-body">{{ t('errors.textTooLong') }}</div>
+      </article>
+      <article class="message is-warning">
+        <div class="message-body has-text-black">{{ t('info') }}</div>
+      </article>
+      <div class="field">
+        <div class="control">
+          <textarea class="textarea" v-model="text" :placeholder="t('placeholder')" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="field has-text-centered">
+        <div class="control">
+          <button class="button has-background-grey-darker has-text-light"
+                  :class="{'is-loading': isLoading}"
+                  @click="generate()">{{ t('generate') }}</button>
+        </div>
+      </div>
+      <div id="customization" class="message is-success">
+        <div class="message-body">
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">{{ t('font') }}</label>
+                <div class="control">
+                  <font-dropdown v-model="font"></font-dropdown>
                 </div>
-                <div class="column">
-                  <div class="field">
-                    <label class="label">{{ t('colorPalette') }}</label>
-                    <div class="control">
-                      <color-dropdown v-model="colorPalette"></color-dropdown>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">{{ t('colorPalette') }}</label>
+                <div class="control">
+                  <color-dropdown v-model="colorPalette"></color-dropdown>
                 </div>
-                <div class="column">
-                  <div class="field">
-                    <label class="label">{{ t('words') }}</label>
-                    <div class="control">
-                      <word-dropdown v-model="words"></word-dropdown>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">{{ t('words') }}</label>
+                <div class="control">
+                  <word-dropdown v-model="words"></word-dropdown>
                 </div>
               </div>
             </div>
           </div>
-          <client-only>
-            <word-cloud :words="words" :font="font" :colorPalette="colorPalette" @update="update()"></word-cloud>
-            <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
-          </client-only>
-          <div class="field">
-            <div class="control has-text-centered">
-              <button v-if="isCreated" class="button is-black" @click="downloadPNG()">
-                <span class="icon-text">
-                  <span class="icon">
-                    <span class="material-icons">file_download</span>
-                  </span>
-                  <span>PNG</span>
-                </span>
-              </button>
-            </div>
-          </div>
+        </div>
+      </div>
+      <client-only>
+        <word-cloud :words="words" :font="font" :colorPalette="colorPalette" @update="update()"></word-cloud>
+        <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
+      </client-only>
+      <div class="field">
+        <div class="control has-text-centered">
+          <button v-if="isCreated" class="button has-background-grey-darker has-text-light" @click="downloadPNG()">
+            <span class="icon-text">
+              <span class="icon">
+                <span class="material-icons">file_download</span>
+              </span>
+              <span>PNG</span>
+            </span>
+          </button>
         </div>
       </div>
     </div>
