@@ -118,13 +118,13 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item is-size-1 has-text-weight-bold" href="https://wordcloud.online">
-        <span class="has-text-link">Word</span> <span class="has-text-danger">Cloud</span>
+      <a class="navbar-item is-size-1 has-text-weight-bold ff-lobster" href="https://wordcloud.online">
+        Word Cloud
       </a>
     </div>
   </nav>
   <section>
-    <div class="columns is-centered">
+    <div class="columns is-centered is-desktop">
       <div class="column is-half">
         <div class="container m-2">
           <article v-if="isError" class="message is-danger">
@@ -140,10 +140,12 @@
           </div>
           <div class="field has-text-centered">
             <div class="control">
-              <button class="button is-link" :class="{'is-loading': isLoading}" @click="generate()">{{ t('generate') }}</button>
+              <button class="button is-black"
+                      :class="{'is-loading': isLoading}"
+                      @click="generate()">{{ t('generate') }}</button>
             </div>
           </div>
-          <div id="customization" class="message is-info">
+          <div id="customization" class="message is-success">
             <div class="message-body">
               <div class="columns">
                 <div class="column">
@@ -179,7 +181,7 @@
           </client-only>
           <div class="field">
             <div class="control has-text-centered">
-              <button v-if="isCreated" class="button is-success" @click="downloadPNG()">
+              <button v-if="isCreated" class="button is-black" @click="downloadPNG()">
                 <span class="icon-text">
                   <span class="icon">
                     <span class="material-icons">file_download</span>
@@ -219,6 +221,10 @@
 </template>
 
 <style>
+  .ff-lobster {
+    font-family: 'Lobster', cursive;
+  }
+
   .navbar .navbar-brand {
     text-align: center;
     display: block;
