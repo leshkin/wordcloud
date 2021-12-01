@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueI18n from '@intlify/vite-plugin-vue-i18n'
 import Components from 'unplugin-vue-components/vite'
