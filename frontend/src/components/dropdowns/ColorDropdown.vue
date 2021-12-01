@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue'
   import { onClickOutside } from '@vueuse/core'
-  import { COLOR_PALETTES } from '@/config.js'
+  import { COLOR_PALETTES } from '/src/config.js'
 
   let isActive = ref(false)
   let currentColorPalette = ref(COLOR_PALETTES[0])

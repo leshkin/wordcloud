@@ -20,10 +20,5 @@ export default defineConfig({
     vueI18n({
       runtimeOnly: false
     })
-  ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
-  }
+  ]
 })

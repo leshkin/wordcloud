@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue'
   import { onClickOutside } from '@vueuse/core'
-  import { FONTS } from '@/config.js'
+  import { FONTS } from '/src/config.js'
 
   let isActive = ref(false)
   let currentFont = ref(FONTS[0])

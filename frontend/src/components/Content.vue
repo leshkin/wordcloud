@@ -3,7 +3,8 @@
   import { useI18n } from 'vue-i18n'
   import { useRouter } from 'vue-router'
   import axios from 'axios'
-  import { FONTS, COLOR_PALETTES } from '@/config.js'
+  import { FONTS, COLOR_PALETTES } from '/src/config.js'
+  import { useHead } from '@vueuse/head'
 
   const { t, locale } = useI18n({ useScope: 'global' })
 
@@ -36,6 +37,16 @@
     default:
       locale.value = 'en'
   }
+
+  useHead({
+    title: t('title'),
+    meta: [
+      {
+        name: 'description',
+        content: t('info'),
+      },
+    ],
+  })
 
   let text = ref('')
   let words = ref([])
