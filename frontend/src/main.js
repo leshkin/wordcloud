@@ -10,7 +10,10 @@ const messages = {
     generate: 'Generate',
     errors: {
       textTooLong: 'The text is too long, please limit it to 10,000 characters.'
-    }
+    },
+    font: 'Font',
+    colorPalette: 'Color palette',
+    words: 'Displayed words'
   },
   ru: {
     info: 'Word Cloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение. При этом слова текста приводятся к нормальной форме (лемматизируются).',
@@ -18,7 +21,10 @@ const messages = {
     generate: 'Создать',
     errors: {
       textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.'
-    }
+    },
+    font: 'Шрифт',
+    colorPalette: 'Палитра цветов',
+    words: 'Отображаемые слова'
   },
   es: {
     info: 'Word Cloud le permite crear una nube de palabras en línea a partir de cualquier texto y descargar la imagen resultante. Las palabras del texto están lematizadas.',
@@ -26,7 +32,10 @@ const messages = {
     generate: 'Generar',
     errors: {
       textTooLong: 'El texto es demasiado largo, limítelo a 10,000 caracteres.'
-    }
+    },
+    font: 'Fuente',
+    colorPalette: 'Paleta de color',
+    words: 'Palabras mostradas'
   },
   de: {
     info: 'Mit Word Cloud können Sie aus jedem Text online eine Wortwolke erstellen und das resultierende Bild herunterladen. Die Wörter des Textes sind lemmatisiert.',
@@ -34,7 +43,10 @@ const messages = {
     generate: 'Generieren',
     errors: {
       textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 10.000 Zeichen.'
-    }
+    },
+    font: 'Schriftart',
+    colorPalette: 'Farbpalette',
+    words: 'Angezeigte Wörter'
   },
   fr: {
     info: 'Word Cloud vous permet de créer un nuage de mots en ligne à partir de n\'importe quel texte et de télécharger l\'image résultante. Les mots du texte sont lemmatisés.',
@@ -42,7 +54,10 @@ const messages = {
     generate: 'Produire',
     errors: {
       textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.'
-    }
+    },
+    font: 'Police de caractère',
+    colorPalette: 'Palette de couleurs',
+    words: 'Mots affichés'
   },
   pt: {
     info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante. As palavras do texto são lematizadas.',
@@ -50,7 +65,10 @@ const messages = {
     generate: 'Gerar',
     errors: {
       textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.'
-    }
+    },
+    font: 'Fonte',
+    colorPalette: 'Paleta de cores',
+    words: 'Palavras exibidas'
   },
   zh: {
     info: 'Word Cloud 允许您从任何文本在线构建词云并下载生成的图像。文本的单词被词形还原。',
@@ -58,7 +76,10 @@ const messages = {
     generate: '产生',
     errors: {
       textTooLong: '文本太长，请将其限制为 10,000 个字符。'
-    }
+    },
+    font: '字体',
+    colorPalette: '调色板',
+    words: '显示的单词'
   }
 }
 

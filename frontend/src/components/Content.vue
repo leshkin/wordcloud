@@ -148,7 +148,7 @@
               <div class="columns">
                 <div class="column">
                   <div class="field">
-                    <label class="label">Font</label>
+                    <label class="label">{{ t('font') }}</label>
                     <div class="control">
                       <font-dropdown v-model="font"></font-dropdown>
                     </div>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="column">
                   <div class="field">
-                    <label class="label">Color palette</label>
+                    <label class="label">{{ t('colorPalette') }}</label>
                     <div class="control">
                       <color-dropdown v-model="colorPalette"></color-dropdown>
                     </div>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="column">
                   <div class="field">
-                    <label class="label">Words</label>
+                    <label class="label">{{ t('words') }}</label>
                     <div class="control">
                       <word-dropdown v-model="words"></word-dropdown>
                     </div>
@@ -196,13 +196,20 @@
   <footer class="footer mt-3">
     <div class="content has-text-centered">
       <p>
-        <a href="/" class="is-inline-block">English</a>
-        <a href="/es" class="ml-3 is-inline-block">Español</a>
-        <a href="/pt" class="ml-3 is-inline-block">Português</a>
-        <a href="/fr" class="ml-3 is-inline-block">Français</a>
-        <a href="/de" class="ml-3 is-inline-block">Deutsch</a>
-        <a href="/ru" class="ml-3 is-inline-block">Русский</a>
-        <a href="/zh" class="ml-3 is-inline-block">中文</a>
+        <span v-if="locale === 'en'" class="is-inline-block">English</span>
+        <a v-else href="/" class="is-inline-block">English</a>
+        <span v-if="locale === 'es'" class="ml-3 is-inline-block">Español</span>
+        <a v-else href="/es" class="ml-3 is-inline-block">Español</a>
+        <span v-if="locale === 'pt'" href="/pt" class="ml-3 is-inline-block">Português</span>
+        <a v-else href="/pt" class="ml-3 is-inline-block">Português</a>
+        <span v-if="locale === 'fr'" class="ml-3 is-inline-block">Français</span>
+        <a v-else href="/fr" class="ml-3 is-inline-block">Français</a>
+        <span v-if="locale === 'de'" class="ml-3 is-inline-block">Deutsch</span>
+        <a v-else href="/de" class="ml-3 is-inline-block">Deutsch</a>
+        <span v-if="locale === 'ru'" class="ml-3 is-inline-block">Русский</span>
+        <a v-else href="/ru" class="ml-3 is-inline-block">Русский</a>
+        <span v-if="locale === 'zh'" class="ml-3 is-inline-block">中文</span>
+        <a v-else href="/zh" class="ml-3 is-inline-block">中文</a>
       </p>
       <p>
         Based on <a href="https://github.com/jasondavies/d3-cloud">d3-cloud</a> and <a href="https://github.com/explosion/spaCy">spaCy</a> libraries
