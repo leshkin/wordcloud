@@ -1,43 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wordcloud.online/</loc>
-    <lastmod>2021-11-04T19:21:00+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://wordcloud.online/en</loc>
-    <lastmod>2021-11-04T19:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <loc>https://wordcloud.online</loc>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
   <url>
     <loc>https://wordcloud.online/ru</loc>
-    <lastmod>2021-11-04T19:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
   <url>
     <loc>https://wordcloud.online/es</loc>
-    <lastmod>2021-11-05T11:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
   <url>
     <loc>https://wordcloud.online/de</loc>
-    <lastmod>2021-11-05T11:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
   <url>
     <loc>https://wordcloud.online/fr</loc>
-    <lastmod>2021-11-05T11:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
   <url>
     <loc>https://wordcloud.online/pt</loc>
-    <lastmod>2021-11-07T11:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
   <url>
     <loc>https://wordcloud.online/zh</loc>
-    <lastmod>2021-11-09T11:21:00+00:00</lastmod>
-    <priority>0.80</priority>
+    <xhtml:link rel="alternate"
+                hreflang="en"
+                href="https://wordcloud.online"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru"
+                href="https://wordcloud.online/ru"/>
+    <xhtml:link rel="alternate"
+                hreflang="es"
+                href="https://wordcloud.online/es"/>
+    <xhtml:link rel="alternate"
+                hreflang="de"
+                href="https://wordcloud.online/de"/>
+    <xhtml:link rel="alternate"
+                hreflang="fr"
+                href="https://wordcloud.online/fr"/>
+    <xhtml:link rel="alternate"
+                hreflang="pt"
+                href="https://wordcloud.online/pt"/>
+    <xhtml:link rel="alternate"
+                hreflang="zh-Hans"
+                href="https://wordcloud.online/zh"/>
   </url>
 </urlset>

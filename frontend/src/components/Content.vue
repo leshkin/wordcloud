@@ -196,7 +196,7 @@
   <footer class="footer mt-3">
     <div class="content has-text-centered">
       <p>
-        <a href="/en" class="is-inline-block">English</a>
+        <a href="/" class="is-inline-block">English</a>
         <a href="/es" class="ml-3 is-inline-block">Español</a>
         <a href="/pt" class="ml-3 is-inline-block">Português</a>
         <a href="/fr" class="ml-3 is-inline-block">Français</a>

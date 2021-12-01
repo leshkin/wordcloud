@@ -70,7 +70,6 @@ const i18n = createI18n({
 
 const routes = [
   { path: '/', component: Content, props: { lang: 'en' } },
-  { path: '/en', component: Content, props: { lang: 'en' } },
   { path: '/ru', component: Content, props: { lang: 'ru' } },
   { path: '/es', component: Content, props: { lang: 'es' } },
   { path: '/de', component: Content, props: { lang: 'de' } },
