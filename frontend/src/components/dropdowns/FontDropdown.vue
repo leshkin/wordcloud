@@ -5,7 +5,7 @@
 
   let isActive = ref(false)
   let currentFont = ref(FONTS[0])
-  const props = defineProps({ modelValue: String })
+  const props = defineProps({ modelValue: Object })
   const emit = defineEmits(['update:modelValue'])
 
   const dropdown = ref(null)

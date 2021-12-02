@@ -5,7 +5,7 @@ import cloud from '/src/lib/d3-cloud.js'
 import { embedFonts } from '/src/lib/embed-fonts.js'
 import { getFontURL } from '/src/config.js'
 
-const props = defineProps({ words: Array, font: String, colorPalette: Object, update: Object })
+const props = defineProps({ words: Array, font: Object, colorPalette: Object, update: Object })
 const emit = defineEmits(['update'])
 
 let layout
