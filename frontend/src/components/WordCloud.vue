@@ -48,7 +48,6 @@ const draw = (words) => {
                                 .attr('id', 'svg')
                                 .attr('width', layout.size()[0])
                                 .attr('height', layout.size()[1])
-                                .attr('style', 'border: 1px solid #dddddd')
 
   svg.append('defs')
       .append('style')
@@ -97,5 +96,9 @@ const draw = (words) => {
     width: 500px;
     display: block;
     background-color: #dddddd;
+  }
+
+  #wordcloud {
+    border: 1px solid #dddddd;
   }
 </style>
