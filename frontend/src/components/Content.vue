@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, watch } from 'vue'
+  import { ref, watch, nextTick } from 'vue'
   import { useI18n } from 'vue-i18n'
   import { useRouter } from 'vue-router'
   import axios from 'axios'
@@ -65,7 +65,6 @@
   )
 
   const generate = async () => {
-    isCreated.value = false
     isError.value = false
     isLoading.value = true
     const response = await axios.post('/lemmatize', { text: text.value})
@@ -87,7 +86,9 @@
     isCreated.value = true
     isLoading.value = false
     isRedrawing.value = false
-    document.querySelector('#customization').scrollIntoView({ behavior: 'smooth' })
+    nextTick(() => {
+      document.querySelector('#customization').scrollIntoView({ behavior: 'smooth' })
+    })
   }
 
   const triggerDownload = (imgURI) => {
@@ -162,7 +163,7 @@
                   @click="generate()">{{ t('generate') }}</button>
         </div>
       </div>
-      <div id="customization" class="message is-success">
+      <div id="customization" class="message is-success" :class="{'is-hidden': !isCreated}">
         <div class="message-body">
           <div class="columns">
             <div class="column">
@@ -203,14 +204,18 @@
         </div>
       </div>
       <client-only>
-        <div class="is-flex is-justify-content-center">
-          <word-cloud :update="wordCloudUpdate" :words="words" :font="font" :colorPalette="colorPalette" @update="update()"></word-cloud>
+        <div class="is-flex is-justify-content-center" :class="{'is-hidden': !isCreated}">
+          <word-cloud :update="wordCloudUpdate"
+                      :words="words"
+                      :font="font"
+                      :colorPalette="colorPalette"
+                      @update="update()"></word-cloud>
           <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
         </div>
       </client-only>
-      <div class="field">
+      <div v-if="isCreated" class="field">
         <div class="control has-text-centered">
-          <button v-if="isCreated" class="button is-dark" @click="downloadPNG()">
+          <button class="button is-dark" @click="downloadPNG()">
             <span class="icon-text">
               <span class="icon">
                 <span class="material-icons">file_download</span>
@@ -223,11 +228,25 @@
       <h3 class="title has-text-centered mb-5 mt-6">Examples</h3>
       <p class="is-size-5 has-text-centered mb-3">1984, George Orwell, 1st chapter</p>
       <div class="container is-justify-content-center is-flex mb-6">
-        <img alt="Word cloud for 1984, George Orwell, 1st chapter" src="/public/wordcloud-1984.png" loading="lazy">
+        <img alt="Word cloud for 1984, George Orwell, 1st chapter" src="/wordcloud-1984.png" loading="lazy">
+      </div>
+      <p class="is-size-5 has-text-centered mb-3">Guide de voyage Paris</p>
+      <div class="container is-justify-content-center is-flex mb-6">
+        <img alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter"
+             src="/wordcloud-paris.png"
+             style="border: 1px solid #dddddd;"
+             loading="lazy">
       </div>
       <p class="is-size-5 has-text-centered mb-3">Eugene Onegin, A. Pushkin, 1st chapter</p>
-      <div class="container is-justify-content-center is-flex">
-        <img alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter" src="/public/wordcloud-onegin.png" loading="lazy">
+      <div class="container is-justify-content-center is-flex mb-6">
+        <img alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter" src="/wordcloud-onegin.png" loading="lazy">
+      </div>
+      <p class="is-size-5 has-text-centered mb-3">A Legend of Confucius</p>
+      <div class="container is-justify-content-center is-flex mb-6">
+        <img alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter"
+             src="/wordcloud-confucius.png"
+             style="border: 1px solid #dddddd;"
+             loading="lazy">
       </div>
     </div>
   </section>

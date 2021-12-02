@@ -28,13 +28,13 @@ export const COLOR_PALETTES = [
     backgroundColor: '#000000'
   },
   {
-    name: 'warm-1',
-    colors: ['#c6c3b3', '#ccaf9b', '#a06b39', '#873c1e', '#312921'],
+    name: 'blue',
+    colors: ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51'],
     backgroundColor: '#ffffff'
   },
   {
-    name: 'pastel-1',
-    colors: ['#a47053', '#efca66', '#ecdab9', '#cec3c8', '#909cac'],
+    name: 'green',
+    colors: ['#386641', '#6a994e', '#a7c957', '#f2e8cf', '#bc4749'],
     backgroundColor: '#ffffff'
   },
   {
