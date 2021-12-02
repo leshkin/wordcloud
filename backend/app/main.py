@@ -23,7 +23,7 @@ class Request(BaseModel):
 @app.post("/lemmatize")
 def analyze(req: Request):
     logger.info(req.text)
-    if len(req.text) < 10000:
+    if len(req.text) < 30000:
         return lemmatizer.get_lemmas(req.text)
     else:
         return {"error": "textTooLong"}
