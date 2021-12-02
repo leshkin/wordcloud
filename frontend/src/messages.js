@@ -5,11 +5,12 @@ export const messages = {
     placeholder: 'Insert text to create a word cloud',
     generate: 'Generate',
     errors: {
-      textTooLong: 'The text is too long, please limit it to 10,000 characters.'
+      textTooLong: 'The text is too long, please limit it to 30,000 characters.'
     },
     font: 'Font',
     colorPalette: 'Color palette',
-    words: 'Displayed words'
+    words: 'Displayed words',
+    redraw: 'Redraw'
   },
   ru: {
     title: 'Word Cloud — создать облако слов онлайн',
@@ -17,11 +18,12 @@ export const messages = {
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать',
     errors: {
-      textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.'
+      textTooLong: 'Текст слишком длинный, ограничьте его 30 000 символов.'
     },
     font: 'Шрифт',
     colorPalette: 'Палитра цветов',
-    words: 'Отображаемые слова'
+    words: 'Отображаемые слова',
+    redraw: 'Перерисовать'
   },
   es: {
     title: 'Word Cloud — generador de nube de palabras en línea',
@@ -29,11 +31,12 @@ export const messages = {
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar',
     errors: {
-      textTooLong: 'El texto es demasiado largo, limítelo a 10,000 caracteres.'
+      textTooLong: 'El texto es demasiado largo, limítelo a 30,000 caracteres.'
     },
     font: 'Fuente',
     colorPalette: 'Paleta de color',
-    words: 'Palabras mostradas'
+    words: 'Palabras mostradas',
+    redraw: 'Redibujar'
   },
   de: {
     title: 'Word Cloud — Online-Wortwolkengenerator',
@@ -41,11 +44,12 @@ export const messages = {
     placeholder: 'Fügen Sie Text ein, um eine Wortwolke zu erstellen',
     generate: 'Generieren',
     errors: {
-      textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 10.000 Zeichen.'
+      textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 30.000 Zeichen.'
     },
     font: 'Schriftart',
     colorPalette: 'Farbpalette',
-    words: 'Angezeigte Wörter'
+    words: 'Angezeigte Wörter',
+    redraw: 'Neu zeichnen'
   },
   fr: {
     title: 'Word Cloud — générateur de nuage de mots en ligne',
@@ -53,11 +57,12 @@ export const messages = {
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire',
     errors: {
-      textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.'
+      textTooLong: 'Le texte est trop long, veuillez le limiter à 30 000 caractères.'
     },
     font: 'Police de caractère',
     colorPalette: 'Palette de couleurs',
-    words: 'Mots affichés'
+    words: 'Mots affichés',
+    redraw: 'Redessiner'
   },
   pt: {
     title: 'Word Cloud — gerador de nuvem de palavras online',
@@ -65,11 +70,12 @@ export const messages = {
     placeholder: 'Insira texto para criar uma nuvem de palavras',
     generate: 'Gerar',
     errors: {
-      textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.'
+      textTooLong: 'O texto é muito longo, limite-o a 30.000 caracteres.'
     },
     font: 'Fonte',
     colorPalette: 'Paleta de cores',
-    words: 'Palavras exibidas'
+    words: 'Palavras exibidas',
+    redraw: 'Redesenhar'
   },
   zh: {
     title: 'Word Cloud — 在线词云生成器',
@@ -77,10 +83,11 @@ export const messages = {
     placeholder: '插入文本以创建词云',
     generate: '产生',
     errors: {
-      textTooLong: '文本太长，请将其限制为 10,000 个字符。'
+      textTooLong: '文本太长，请将其限制为 30,000 个字符。'
     },
     font: '字体',
     colorPalette: '调色板',
-    words: '显示的单词'
+    words: '显示的单词',
+    redraw: '重绘'
   }
 }

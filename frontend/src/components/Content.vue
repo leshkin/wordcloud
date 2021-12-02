@@ -12,8 +12,10 @@
   let isCreated = ref(false)
   let isError = ref(false)
   let isLoading = ref(false)
+  let isRedrawing = ref(false)
   let font = ref(FONTS[0])
   let colorPalette = ref(COLOR_PALETTES[0])
+  let wordCloudUpdate = ref(null)
 
   switch (router.currentRoute.value.path) {
     case '/ru':
@@ -84,6 +86,7 @@
   const update = () => {
     isCreated.value = true
     isLoading.value = false
+    isRedrawing.value = false
     document.querySelector('#customization').scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -124,17 +127,22 @@
 
     img.src = url
   }
+
+  const redraw = () => {
+    isRedrawing.value = true
+    wordCloudUpdate.value = {}
+  }
 </script>
 
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <span class="navbar-item is-size-1 has-text-grey-darker has-text-weight-bold ff-lobster">
+      <span class="navbar-item is-size-1 has-text-dark has-text-weight-bold ff-lobster">
         Word Cloud
       </span>
     </div>
   </nav>
-  <section class="m-1">
+  <section class="m-2">
     <div class="container is-max-desktop">
       <article v-if="isError" class="message is-danger">
         <div class="message-body">{{ t('errors.textTooLong') }}</div>
@@ -149,7 +157,7 @@
       </div>
       <div class="field has-text-centered">
         <div class="control">
-          <button class="button has-background-grey-darker has-text-light"
+          <button class="button is-dark"
                   :class="{'is-loading': isLoading}"
                   @click="generate()">{{ t('generate') }}</button>
         </div>
@@ -181,16 +189,28 @@
                 </div>
               </div>
             </div>
+            <div class="column is-align-items-center is-align-self-center">
+              <div class="field">
+                <div class="control">
+                  <button :disabled="words.length === 0"
+                          class="button is-success"
+                          @click="redraw()"
+                          :class="{'is-loading': isRedrawing}">Redraw</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <client-only>
-        <word-cloud :words="words" :font="font" :colorPalette="colorPalette" @update="update()"></word-cloud>
-        <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
+        <div class="is-flex is-justify-content-center">
+          <word-cloud :update="wordCloudUpdate" :words="words" :font="font" :colorPalette="colorPalette" @update="update()"></word-cloud>
+          <canvas id="canvas" class="is-hidden" width="1500" height="1500"></canvas>
+        </div>
       </client-only>
       <div class="field">
         <div class="control has-text-centered">
-          <button v-if="isCreated" class="button has-background-grey-darker has-text-light" @click="downloadPNG()">
+          <button v-if="isCreated" class="button is-dark" @click="downloadPNG()">
             <span class="icon-text">
               <span class="icon">
                 <span class="material-icons">file_download</span>
