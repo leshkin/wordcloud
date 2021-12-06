@@ -5,7 +5,7 @@ export const messages = {
     placeholder: 'Insert text to create a word cloud',
     generate: 'Generate',
     errors: {
-      textTooLong: 'The text is too long, please limit it to 30,000 characters.'
+      textTooLong: 'The text is too long, please limit it to 10,000 characters.'
     },
     font: 'Font',
     colorPalette: 'Color palette',
@@ -18,7 +18,7 @@ export const messages = {
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать',
     errors: {
-      textTooLong: 'Текст слишком длинный, ограничьте его 30 000 символов.'
+      textTooLong: 'Текст слишком длинный, ограничьте его 10 000 символов.'
     },
     font: 'Шрифт',
     colorPalette: 'Палитра цветов',
@@ -31,7 +31,7 @@ export const messages = {
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar',
     errors: {
-      textTooLong: 'El texto es demasiado largo, limítelo a 30,000 caracteres.'
+      textTooLong: 'El texto es demasiado largo, limítelo a 10,000 caracteres.'
     },
     font: 'Fuente',
     colorPalette: 'Paleta de color',
@@ -44,7 +44,7 @@ export const messages = {
     placeholder: 'Fügen Sie Text ein, um eine Wortwolke zu erstellen',
     generate: 'Generieren',
     errors: {
-      textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 30.000 Zeichen.'
+      textTooLong: 'Der Text ist zu lang, bitte begrenzen Sie ihn auf 10.000 Zeichen.'
     },
     font: 'Schriftart',
     colorPalette: 'Farbpalette',
@@ -57,7 +57,7 @@ export const messages = {
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire',
     errors: {
-      textTooLong: 'Le texte est trop long, veuillez le limiter à 30 000 caractères.'
+      textTooLong: 'Le texte est trop long, veuillez le limiter à 10 000 caractères.'
     },
     font: 'Police de caractère',
     colorPalette: 'Palette de couleurs',
@@ -70,7 +70,7 @@ export const messages = {
     placeholder: 'Insira texto para criar uma nuvem de palavras',
     generate: 'Gerar',
     errors: {
-      textTooLong: 'O texto é muito longo, limite-o a 30.000 caracteres.'
+      textTooLong: 'O texto é muito longo, limite-o a 10.000 caracteres.'
     },
     font: 'Fonte',
     colorPalette: 'Paleta de cores',
@@ -83,7 +83,7 @@ export const messages = {
     placeholder: '插入文本以创建词云',
     generate: '产生',
     errors: {
-      textTooLong: '文本太长，请将其限制为 30,000 个字符。'
+      textTooLong: '文本太长，请将其限制为 10,000 个字符。'
     },
     font: '字体',
     colorPalette: '调色板',
