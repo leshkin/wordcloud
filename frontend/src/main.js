@@ -17,7 +17,8 @@ const routes = [
   { path: '/de', component: Content, props: { lang: 'de' } },
   { path: '/fr', component: Content, props: { lang: 'fr' } },
   { path: '/pt', component: Content, props: { lang: 'pt' } },
-  { path: '/zh', component: Content, props: { lang: 'zh' } }
+  { path: '/zh', component: Content, props: { lang: 'zh' } },
+  { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
 
 export const createApp = ViteSSG(App, { routes }, ({ app }) => {

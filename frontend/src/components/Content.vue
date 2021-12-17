@@ -19,21 +19,27 @@
 
   switch (router.currentRoute.value.path) {
     case '/ru':
+    case '/ru/':
       locale.value = 'ru'
       break
     case '/fr':
+    case '/fr/':
       locale.value = 'fr'
       break
     case '/de':
+    case '/de/':
       locale.value = 'de'
       break
     case '/es':
+    case '/es/':
       locale.value = 'es'
       break
     case '/pt':
+    case '/pt/':
       locale.value = 'pt'
       break
     case '/zh':
+    case '/zh/':
       locale.value = 'zh'
       break
     default:
