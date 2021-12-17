@@ -225,12 +225,12 @@
           </button>
         </div>
       </div>
-      <h3 class="title has-text-centered mb-5 mt-6">Examples</h3>
+      <h3 class="title has-text-centered mb-5 mt-6">{{ t('examples') }}</h3>
       <p class="is-size-5 has-text-centered mb-3">1984, George Orwell, 1st chapter</p>
       <div class="container is-justify-content-center is-flex mb-6">
         <img alt="Word cloud for 1984, George Orwell, 1st chapter" src="/wordcloud-1984.png" loading="lazy">
       </div>
-      <p class="is-size-5 has-text-centered mb-3">Guide de voyage Paris</p>
+      <p class="is-size-5 has-text-centered mb-3">Paris travel guide</p>
       <div class="container is-justify-content-center is-flex mb-6">
         <img alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter"
              src="/wordcloud-paris.png"

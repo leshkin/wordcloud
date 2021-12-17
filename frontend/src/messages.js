@@ -10,7 +10,8 @@ export const messages = {
     font: 'Font',
     colorPalette: 'Color palette',
     words: 'Displayed words',
-    redraw: 'Redraw'
+    redraw: 'Redraw',
+    examples: 'Word cloud examples'
   },
   ru: {
     title: 'Word Cloud — создать облако слов онлайн',
@@ -23,7 +24,8 @@ export const messages = {
     font: 'Шрифт',
     colorPalette: 'Палитра цветов',
     words: 'Отображаемые слова',
-    redraw: 'Перерисовать'
+    redraw: 'Перерисовать',
+    examples: 'Примеры облака слов'
   },
   es: {
     title: 'Word Cloud — generador de nube de palabras en línea',
@@ -36,7 +38,8 @@ export const messages = {
     font: 'Fuente',
     colorPalette: 'Paleta de color',
     words: 'Palabras mostradas',
-    redraw: 'Redibujar'
+    redraw: 'Redibujar',
+    examples: 'Ejemplos de nube de palabras'
   },
   de: {
     title: 'Word Cloud — Online-Wortwolkengenerator',
@@ -49,7 +52,8 @@ export const messages = {
     font: 'Schriftart',
     colorPalette: 'Farbpalette',
     words: 'Angezeigte Wörter',
-    redraw: 'Neu zeichnen'
+    redraw: 'Neu zeichnen',
+    examples: 'Beispiele für Wortwolken'
   },
   fr: {
     title: 'Word Cloud — générateur de nuage de mots en ligne',
@@ -62,7 +66,8 @@ export const messages = {
     font: 'Police de caractère',
     colorPalette: 'Palette de couleurs',
     words: 'Mots affichés',
-    redraw: 'Redessiner'
+    redraw: 'Redessiner',
+    examples: 'Exemples de nuages de mots'
   },
   pt: {
     title: 'Word Cloud — gerador de nuvem de palavras online',
@@ -75,7 +80,8 @@ export const messages = {
     font: 'Fonte',
     colorPalette: 'Paleta de cores',
     words: 'Palavras exibidas',
-    redraw: 'Redesenhar'
+    redraw: 'Redesenhar',
+    examples: 'Exemplos de nuvem de palavras'
   },
   zh: {
     title: 'Word Cloud — 在线词云生成器',
@@ -88,6 +94,7 @@ export const messages = {
     font: '字体',
     colorPalette: '调色板',
     words: '显示的单词',
-    redraw: '重绘'
+    redraw: '重绘',
+    examples: '词云示例'
   }
 }
