@@ -7,17 +7,18 @@ import Components from 'unplugin-vue-components/vite'
 export default defineConfig({
   server: {
     proxy: {
-      '/lemmatize': 'http://localhost:8889'
-    }
+      '/lemmatize': 'http://127.0.0.1:8889',
+      // '/lemmatize': 'https://wordcloud.online',
+    },
   },
   plugins: [
     Components({
       extensions: ['vue'],
-      include: [/\.vue$/, /\.vue\?vue/]
+      include: [/\.vue$/, /\.vue\?vue/],
     }),
     vue(),
     vueI18n({
-      runtimeOnly: false
-    })
-  ]
+      runtimeOnly: false,
+    }),
+  ],
 })

@@ -6,11 +6,11 @@ import { FONTS } from '/src/config.js'
 
 const { locale } = useI18n({ useScope: 'global' })
 let isActive = ref(false)
-const props = defineProps({ modelValue: Object })
+const props = defineProps({ modelValue: Object, textLang: String })
 const emit = defineEmits(['update:modelValue'])
 
 const fonts = computed(() => {
-  return FONTS.filter((font) => font.lang.includes(locale.value))
+  return FONTS.filter((font) => font.lang.includes(props.textLang))
 })
 
 let currentFont = ref(fonts.value[0])

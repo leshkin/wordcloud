@@ -15,6 +15,6 @@ services:
       context: ./backend
       dockerfile: Dockerfile.dev
     ports:
-      - 8889:8888
+      - 8889:80
     volumes:
       - ./backend/app:/app

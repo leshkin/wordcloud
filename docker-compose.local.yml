@@ -3,6 +3,8 @@ version: '3'
 services:
   frontend:
     image: 1eshkin/wordcloud-frontend:0.6.0
+    ports:
+      - 8080:80/tcp
 
   backend:
     image: 1eshkin/wordcloud-backend:0.5.0
@@ -14,14 +16,5 @@ services:
       resources:
         limits:
           memory: 700M
-
-  proxy:
-    image: jonasal/nginx-certbot:1.2.0-nginx1.19.8
     ports:
-      - 80:80/tcp
-      - 443:443/tcp
-    environment:
-      - CERTBOT_EMAIL=alaposhin@gmail.com
-    volumes:
-      - ./proxy/conf.d:/etc/nginx/conf.d
-      - ./proxy/letsencrypt:/etc/letsencrypt
+      - 8080:80/tcp

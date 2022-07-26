@@ -7,7 +7,7 @@ import { messages } from './messages.js'
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
-  messages
+  messages,
 })
 
 const routes = [
@@ -18,7 +18,7 @@ const routes = [
   { path: '/fr', component: Content, props: { lang: 'fr' } },
   { path: '/pt', component: Content, props: { lang: 'pt' } },
   { path: '/zh', component: Content, props: { lang: 'zh' } },
-  { path: '/:pathMatch(.*)*', redirect: '/' }
+  { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
 export const createApp = ViteSSG(App, { routes }, ({ app }) => {

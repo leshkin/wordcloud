@@ -53,20 +53,20 @@ Word Cloud allows you to build a word cloud online from any text and download th
 1. Build image for frontend
    ```bash
    cd frontend # from the project directory
-   docker build -t 1eshkin/textometr-frontend:x.x.x .
+   docker build -t 1eshkin/wordcloud-frontend:x.x.x .
    ```
 2. Push frontend image to the Docker Hub
    ```bash
-   docker push 1eshkin/textometr-frontend:x.x.x
+   docker push 1eshkin/wordcloud-frontend:x.x.x
    ```
 3. Build image for backend
    ```bash
    cd backend # from the project directory
-   docker build -t 1eshkin/textometr-backend:x.x.x .
+   docker build -t 1eshkin/wordcloud-backend:x.x.x .
    ```
 4. Push backend image to the Docker Hub
    ```bash
-   docker push 1eshkin/textometr-backend:x.x.x
+   docker push 1eshkin/wordcloud-backend:x.x.x
    ```
 
 ### Deploy to Docker Swarm

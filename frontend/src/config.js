@@ -13,7 +13,7 @@ export const FONTS = [
   },
   {
     family: 'Russo One',
-    lang: ['en', 'es', 'de', 'fr', 'pt', 'ru'],
+    lang: ['ru'],
   },
   {
     family: 'Bebas Neue',

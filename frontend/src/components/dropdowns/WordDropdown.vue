@@ -1,36 +1,44 @@
 <script setup>
-  import { ref } from 'vue'
-  import { onClickOutside } from '@vueuse/core'
+import { ref, computed } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { useI18n } from 'vue-i18n'
 
-  let isActive = ref(false)
-  const props = defineProps({ modelValue: Array })
-  const emit = defineEmits(['update:modelValue'])
+const { t } = useI18n({ useScope: 'global' })
+let isActive = ref(false)
+const props = defineProps({ modelValue: Array })
+const emit = defineEmits(['update:modelValue'])
 
-  const dropdown = ref(null)
-  onClickOutside(dropdown, () => {
-      isActive.value = false
-    }
-  )
+const dropdown = ref(null)
+onClickOutside(dropdown, () => {
+  isActive.value = false
+})
 
-  const open = () => {
-    isActive.value = !isActive.value
-  }
+const open = () => {
+  isActive.value = !isActive.value
+}
 
-  const select = (word) => {
-    word.visible = !word.visible
-    emit('update:modelValue', props.modelValue)
-  }
+const select = (word) => {
+  word.visible = !word.visible
+  emit('update:modelValue', props.modelValue)
+}
+
+const total = computed(() => {
+  return props.modelValue.length
+})
+
+const visible = computed(() => {
+  return props.modelValue.filter((v) => v.visible).length
+})
 </script>
 
 <template>
-  <div class="dropdown" :class="{'is-active': isActive}" ref="dropdown">
+  <div class="dropdown" :class="{ 'is-active': isActive }" ref="dropdown">
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" @click="open()">
-        <span>total {{ modelValue.length }}</span>
+        <span>{{ t('total') }} {{ total }}</span
+        ><span class="mx-1">/</span><span>{{ t('visible') }} {{ visible }}</span>
         <span class="icon is-small">
-          <span class="material-icons">
-            expand_more
-          </span>
+          <span class="material-icons"> expand_more </span>
         </span>
       </button>
     </div>
@@ -40,9 +48,9 @@
           <div class="field">
             <div class="control">
               <label class="checkbox">
-                <input type="checkbox" checked @change="select(word)">
+                <input type="checkbox" :checked="word.visible" @change="select(word)" />
                 {{ word.name }}
-                <span class="word-count">{{ word.count }}</span>
+                <span class="tag is-light">{{ word.count }}</span>
               </label>
             </div>
           </div>
@@ -53,18 +61,18 @@
 </template>
 
 <style scoped>
-  .dropdown-item {
-    cursor: pointer;
-    font-size: 1rem;
-  }
+.dropdown-item {
+  cursor: pointer;
+  font-size: 1rem;
+}
 
-  label.checkbox {
-    word-break: break-all;
-  }
+label.checkbox {
+  word-break: break-all;
+}
 
-  .word-count {
-    border-radius: 3px;
-    border: 1px solid gray;
-    padding: 0px 3px;
-  }
+.dropdown-content {
+  height: 300px;
+  width: 250px;
+  overflow: auto;
+}
 </style>

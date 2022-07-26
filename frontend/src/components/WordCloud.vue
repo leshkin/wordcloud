@@ -7,13 +7,23 @@ import { getFontURL } from '/src/config.js'
 
 const props = defineProps({ words: Array, font: Object, colorPalette: Object, update: Object })
 const emit = defineEmits(['update'])
+let hidden = true
 
 let layout
 let css
 
+watch(props, async (props) => {
+  if (props.words.filter((w) => w.visible).length > 0) {
+    hidden = true
+    redraw(props.words, props.font, props.colorPalette)
+    hidden = true
+    redraw(props.words, props.font, props.colorPalette)
+  }
+})
+
 const redraw = async (words, font, colorPalette) => {
   css = await embedFonts(getFontURL(font))
-  words = words.filter(w => w.visible)
+  words = words.filter((w) => w.visible)
   const ratio = 100 / words[0].count
   layout = cloud()
     .size(['500', '500'])
@@ -31,74 +41,65 @@ const redraw = async (words, font, colorPalette) => {
   layout.start()
 }
 
-watch(
-  props,
-  async (props) => {
-    if (props.words.filter(w => w.visible).length > 0) {
-      redraw(props.words, props.font, props.colorPalette)
-    }
-  }
-)
-
 const draw = (words) => {
-  select('#wordcloud').select('span').remove()
   select('#wordcloud').select('svg').remove()
+  console.log(hidden)
+  let svg = select(hidden ? '#wordcloud-hidden' : '#wordcloud')
+    .append('svg')
+    .attr('id', 'svg')
+    .attr('width', 500)
+    .attr('height', 500)
+    .attr('viewBox', '-250 -250 500 500')
 
-  let svg = select('#wordcloud').append('svg')
-                                .attr('id', 'svg')
-                                .attr('width', layout.size()[0])
-                                .attr('height', layout.size()[1])
+  svg.append('defs').append('style').attr('type', 'text/css').text(css)
 
-  svg.append('defs')
-      .append('style')
-        .attr('type', 'text/css')
-        .text(css)
-  
-  svg.append('rect')
-        .attr('width', '100%')
-        .attr('height', '100%')
-        .attr('fill', props.colorPalette.backgroundColor)
-    
-  svg.append('g')
-    .attr('transform', 'translate(' + layout.size()[0] / 2 + ',' + layout.size()[1] / 2 + ')')
+  svg
+    .append('rect')
+    .attr('x', '-250')
+    .attr('y', '-250')
+    .attr('width', '500')
+    .attr('height', '500')
+    .attr('fill', props.colorPalette.backgroundColor)
+
+  svg
     .selectAll('text')
     .data(words)
     .enter()
     .append('text')
-      .style('font-size', function (d) {
-        return d.size + 'px'
-      })
-      .style('font-family', props.font.family)
-      .style('fill', function() {
-        return props.colorPalette.colors[Math.floor( Math.random() * props.colorPalette.colors.length )]
-      })
-      .attr('text-anchor', 'middle')
-      .attr('transform', function (d) {
-        return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
-      })
-      .text(function (d) {
-        return d.text
-      })
+    .style('font-size', function (d) {
+      return d.size + 'px'
+    })
+    .style('font-family', props.font.family)
+    .style('fill', function () {
+      return props.colorPalette.colors[Math.floor(Math.random() * props.colorPalette.colors.length)]
+    })
+    .attr('text-anchor', 'middle')
+    .attr('transform', function (d) {
+      return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
+    })
+    .text(function (d) {
+      return d.text
+    })
 
   emit('update')
 }
 </script>
 
 <template>
-  <span id="wordcloud" class="mb-5">
-    <span class="empty"></span>
-  </span>
+  <div id="wordcloud-hidden" class="mb-5"></div>
+  <div id="wordcloud" class="mb-5"></div>
 </template>
 
 <style>
-  .empty {
-    height: 500px;
-    width: 500px;
-    display: block;
-    background-color: #dddddd;
-  }
+#wordcloud-hidden {
+  border: 1px solid #dddddd;
+}
 
-  #wordcloud {
-    border: 1px solid #dddddd;
-  }
+#wordcloud {
+  border: 1px solid #dddddd;
+}
+
+#wordcloud svg {
+  display: block;
+}
 </style>

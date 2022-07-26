@@ -53,7 +53,7 @@ def get_lemmas(text):
             else:
                 lemmas.append(capitalize_by_shape(token))
 
-    return frequency_bag_from_list(lemmas)
+    return {'lang': lang, 'words': frequency_bag_from_list(lemmas)}
 
 
 def capitalize_by_shape(token):
