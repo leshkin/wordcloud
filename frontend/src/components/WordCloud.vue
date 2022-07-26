@@ -7,16 +7,12 @@ import { getFontURL } from '/src/config.js'
 
 const props = defineProps({ words: Array, font: Object, colorPalette: Object, update: Object })
 const emit = defineEmits(['update'])
-let hidden = true
 
 let layout
 let css
 
 watch(props, async (props) => {
   if (props.words.filter((w) => w.visible).length > 0) {
-    hidden = true
-    redraw(props.words, props.font, props.colorPalette)
-    hidden = true
     redraw(props.words, props.font, props.colorPalette)
   }
 })
@@ -43,8 +39,7 @@ const redraw = async (words, font, colorPalette) => {
 
 const draw = (words) => {
   select('#wordcloud').select('svg').remove()
-  console.log(hidden)
-  let svg = select(hidden ? '#wordcloud-hidden' : '#wordcloud')
+  let svg = select('#wordcloud')
     .append('svg')
     .attr('id', 'svg')
     .attr('width', 500)
@@ -86,15 +81,10 @@ const draw = (words) => {
 </script>
 
 <template>
-  <div id="wordcloud-hidden" class="mb-5"></div>
   <div id="wordcloud" class="mb-5"></div>
 </template>
 
 <style>
-#wordcloud-hidden {
-  border: 1px solid #dddddd;
-}
-
 #wordcloud {
   border: 1px solid #dddddd;
 }
