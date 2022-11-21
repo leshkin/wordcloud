@@ -242,36 +242,93 @@ const redraw = () => {
           </button>
         </div>
       </div>
-      <h3 class="title has-text-centered mb-5 mt-6">{{ t('examples') }}</h3>
+      <h3 class="title has-text-centered mb-5 mt-6">{{ t('gallery') }}</h3>
       <p class="is-size-5 has-text-centered mb-3">1984, George Orwell, 1st chapter</p>
       <div class="container is-justify-content-center is-flex mb-6">
         <img alt="Word cloud for 1984, George Orwell, 1st chapter" src="/wordcloud-1984.png" loading="lazy" />
       </div>
-      <p class="is-size-5 has-text-centered mb-3">Paris travel guide</p>
+
+      <p class="is-size-5 has-text-centered mb-3">{{ t('parisTravelGuide') }}</p>
       <div class="container is-justify-content-center is-flex mb-6">
         <img
-          alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter"
+          alt="Word cloud for Paris travel guide"
           src="/wordcloud-paris.png"
           style="border: 1px solid #dddddd"
           loading="lazy"
         />
       </div>
+
       <p class="is-size-5 has-text-centered mb-3">Eugene Onegin, A. Pushkin, 1st chapter</p>
       <div class="container is-justify-content-center is-flex mb-6">
         <img alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter" src="/wordcloud-onegin.png" loading="lazy" />
       </div>
-      <p class="is-size-5 has-text-centered mb-3">A Legend of Confucius</p>
+
+      <p class="is-size-5 has-text-centered mb-3">{{ t('legendOfConfucius') }}</p>
       <div class="container is-justify-content-center is-flex mb-6">
         <img
-          alt="Word cloud for Eugene Onegin, A. Pushkin, 1st chapter"
+          alt="Word cloud for A Legend of Confucius"
           src="/wordcloud-confucius.png"
           style="border: 1px solid #dddddd"
           loading="lazy"
         />
       </div>
+
+      <h3 class="title has-text-centered mb-5 mt-6">{{ t('testimonials') }}</h3>
+      <div class="card mb-3">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="/anton.jpeg" alt="Avatar" />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Anton L</p>
+              <p class="subtitle is-6">
+                <a href="https://anton-l.medium.com/top-5-best-free-word-cloud-generators-13836706375b"
+                  >Top 5 free word cloud generators in 2022</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="content">
+            The minimalistic service and the only one I’ve analyzed that lemmatizes words to the initial grammatical
+            form! Simple interface, good ready-made styles. Also, the algorithm places the most frequent words closer to
+            the center of the cloud, that is, the visual focus is on the frequent vocabulary. Of the minuses: there is
+            not a large selection of cloud shapes.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="/miroslava.webp" alt="Avatar" />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Мирослава К.</p>
+              <p class="subtitle is-6">
+                <a href="https://vc.ru/services/368275-5-luchshih-besplatnyh-servisov-dlya-sozdaniya-oblaka-slov"
+                  >5 лучших бесплатных сервисов для создания облака слов</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="content">
+            Этот сервис умнее всего анализирует текст: он позволяет создать облако частотных слов текста, при этом
+            приводя все слова к начальной форме. Это значит, вы не получите, например, в облаке кот, коту, кота и т.д.,
+            а посчитаются сразу все формы слова кот. Полученный набор слов можно настроить, например, убрать фамилии или
+            цифры. Красивые цветовые палитры, минимум функций, отсутствие регистрации. Кроме русского поддерживаются
+            другие языки. Главный минус — отсутствие более сложных форм облака.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <footer class="footer mt-3">
+
+  <footer class="footer mt-5">
     <div class="content has-text-centered">
       <p>
         <span v-if="locale === 'en'" class="is-inline-block">English</span>
@@ -289,6 +346,8 @@ const redraw = () => {
         <span v-if="locale === 'zh'" class="ml-3 is-inline-block">中文</span>
         <a v-else href="/zh" class="ml-3 is-inline-block">中文</a>
       </p>
+      <p>View code on <a href="https://github.com/leshkin/wordcloud">GitHub</a></p>
+      <p>Project page on <a href="https://www.facebook.com/wordcloud.online">Facebook</a></p>
       <p>
         Based on <a href="https://github.com/jasondavies/d3-cloud">d3-cloud</a> and
         <a href="https://github.com/explosion/spaCy">spaCy</a> libraries
