@@ -1,6 +1,6 @@
 export const messages = {
   en: {
-    title: 'Free Word Cloud Generator - WordCloud.online',
+    title: 'Word Cloud - Free Online Generator',
     info: 'Word Cloud allows you to build a word cloud online from any text and download the resulting image. The words of the text are lemmatized.',
     placeholder: 'Insert text to create a word cloud',
     generate: 'Generate',
@@ -20,7 +20,7 @@ export const messages = {
     testimonials: 'Testimonials',
   },
   ru: {
-    title: 'Создать облако слов онлайн - WordCloud.online',
+    title: 'Облако слов - создать онлайн и бесплатно',
     info: 'Word Cloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение. При этом слова текста приводятся к нормальной форме (лемматизируются).',
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать',
