@@ -1,6 +1,6 @@
 # Word Cloud
 
-Word Cloud allows you to build a word cloud online from any text and download the resulting image.
+**WordCloud.online** allows you to build a word cloud online from any text and download the resulting image. The words of the text are lemmatized. You can select colors and fonts for the displayed words.
 
 [![GitHub Super-Linter](https://github.com/leshkin/wordcloud.online/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
