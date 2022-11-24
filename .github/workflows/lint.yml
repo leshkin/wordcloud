@@ -1,4 +1,4 @@
-name: Lint code base
+name: Lint Code Base
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
 
 jobs:
   lint:
-    name: Lint code base
+    name: Lint Code Base
     runs-on: ubuntu-latest
 
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Runs the Super-Linter action
       - name: Lint Code Base
@@ -21,4 +21,4 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FILTER_REGEX_EXCLUDE: (index.html|d3-cloud.js|sitemap.xml)
+          FILTER_REGEX_EXCLUDE: (index.html|d3-cloud.js|sitemap.xml|ads.txt)

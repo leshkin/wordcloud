@@ -2,11 +2,16 @@
 
 Word Cloud allows you to build a word cloud online from any text and download the resulting image.
 
-[![GitHub Super-Linter](https://github.com/leshkin/wordcloud.online/workflows/Super-Linter/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Super-Linter](https://github.com/leshkin/wordcloud.online/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
+## Word cloud for "1984, George Orwell, 1st chapter"
+
+![Word cloud for "1984, George Orwell, 1st chapter"](https://wordcloud.online/wordcloud-1984.png)
 
 ## Development
 
 1. Run backend
+
    ```bash
    docker-compose -f docker-compose.dev.yml up
    ```
@@ -48,6 +53,7 @@ Word Cloud allows you to build a word cloud online from any text and download th
    ```bash
    pip install -r requirements.txt
    ```
+
 ### Build images
 
 1. Build image for frontend
