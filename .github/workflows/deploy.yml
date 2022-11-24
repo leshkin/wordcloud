@@ -7,8 +7,7 @@ on:
 
 jobs:
   build-push-and-deploy-docker-images:
-    name: Build and push Docker images
-    needs: [lint]
+    name: Build, push and deploy Docker images
     runs-on: ubuntu-latest
     permissions:
       contents: read
