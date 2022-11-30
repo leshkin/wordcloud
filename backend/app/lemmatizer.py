@@ -35,7 +35,7 @@ def get_lemmas(text):
     elif lang == "zh":
         doc = nlp_zh(text)
     else:
-        doc = nlp_xx(text)
+        doc = nlp_en(text) # todo: nlp_xx model doesn't work for tr, uk and hi languages
 
     lemmas = []
     for token in doc:
