@@ -146,7 +146,7 @@ const redraw = () => {
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <span class="navbar-item is-size-1 has-text-dark has-text-weight-bold ff-lobster"> Word Cloud </span>
+      <span class="navbar-item is-size-1 has-text-dark has-text-weight-bold ff-lobster">Word Cloud</span>
     </div>
   </nav>
   <section class="m-2">
