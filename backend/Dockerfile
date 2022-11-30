@@ -7,6 +7,7 @@ RUN pip install --no-cache-dir \
     uvicorn==0.13.4 \
     spacy==3.1.3 \
     langid==1.1.6 \
+    && python -m spacy download xx_ent_wiki_sm \
     && python -m spacy download en_core_web_sm \
     && python -m spacy download ru_core_news_sm \
     && python -m spacy download fr_core_news_sm \

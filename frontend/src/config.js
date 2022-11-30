@@ -1,31 +1,31 @@
 export const FONTS = [
   {
     family: 'Lobster',
-    lang: ['en', 'es', 'de', 'fr', 'pt', 'ru'],
+    lang: ['en', 'es', 'de', 'fr', 'pt', 'tr', 'pl', 'tl', 'uk', 'ru'],
   },
   {
     family: 'Roboto',
-    lang: ['en', 'es', 'de', 'fr', 'pt', 'ru'],
+    lang: ['en', 'es', 'de', 'fr', 'pt', 'tr', 'pl', 'tl', 'uk', 'ru'],
   },
   {
     family: 'Alfa Slab One',
-    lang: ['en', 'es', 'de', 'fr', 'pt'],
+    lang: ['en', 'es', 'de', 'fr', 'pt', 'tr', 'pl', 'tl'],
   },
   {
     family: 'Russo One',
-    lang: ['ru'],
+    lang: ['ru', 'uk'],
   },
   {
     family: 'Bebas Neue',
-    lang: ['en', 'es', 'de', 'fr', 'pt'],
+    lang: ['en', 'es', 'de', 'fr', 'pt', 'tr', 'pl', 'tl', 'uk'],
   },
   {
     family: 'Source Serif Pro',
-    lang: ['en', 'es', 'de', 'fr', 'pt', 'ru'],
+    lang: ['en', 'es', 'de', 'fr', 'pt', 'tr', 'pl', 'tl', 'uk', 'ru'],
   },
   {
     family: 'Noto Sans SC',
-    lang: ['zh'],
+    lang: ['hi', 'zh'],
   },
 ]
 

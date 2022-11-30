@@ -38,6 +38,26 @@ switch (router.currentRoute.value.path) {
   case '/pt/':
     locale.value = 'pt'
     break
+  case '/tr':
+  case '/tr/':
+    locale.value = 'tr'
+    break
+  case '/pl':
+  case '/pl/':
+    locale.value = 'pl'
+    break
+  case '/tl':
+  case '/tl/':
+    locale.value = 'tl'
+    break
+  case '/uk':
+  case '/uk/':
+    locale.value = 'uk'
+    break
+  case '/hi':
+  case '/hi/':
+    locale.value = 'hi'
+    break
   case '/zh':
   case '/zh/':
     locale.value = 'zh'
@@ -343,6 +363,16 @@ const redraw = () => {
         <a v-else href="/de" class="ml-3 is-inline-block">Deutsch</a>
         <span v-if="locale === 'ru'" class="ml-3 is-inline-block">Русский</span>
         <a v-else href="/ru" class="ml-3 is-inline-block">Русский</a>
+        <span v-if="locale === 'tr'" class="ml-3 is-inline-block">Türk</span>
+        <a v-else href="/tr" class="ml-3 is-inline-block">Türk</a>
+        <span v-if="locale === 'pl'" class="ml-3 is-inline-block">Polski</span>
+        <a v-else href="/pl" class="ml-3 is-inline-block">Polski</a>
+        <span v-if="locale === 'tl'" class="ml-3 is-inline-block">Filipino</span>
+        <a v-else href="/tl" class="ml-3 is-inline-block">Filipino</a>
+        <span v-if="locale === 'uk'" class="ml-3 is-inline-block">Українська</span>
+        <a v-else href="/uk" class="ml-3 is-inline-block">Українська</a>
+        <span v-if="locale === 'hi'" class="ml-3 is-inline-block">हिन्दी</span>
+        <a v-else href="/hi" class="ml-3 is-inline-block">हिन्दी</a>
         <span v-if="locale === 'zh'" class="ml-3 is-inline-block">中文</span>
         <a v-else href="/zh" class="ml-3 is-inline-block">中文</a>
       </p>

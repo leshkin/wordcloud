@@ -17,6 +17,11 @@ const routes = [
   { path: '/de', component: Content, props: { lang: 'de' } },
   { path: '/fr', component: Content, props: { lang: 'fr' } },
   { path: '/pt', component: Content, props: { lang: 'pt' } },
+  { path: '/tr', component: Content, props: { lang: 'tr' } },
+  { path: '/pl', component: Content, props: { lang: 'pl' } },
+  { path: '/tl', component: Content, props: { lang: 'tl' } },
+  { path: '/uk', component: Content, props: { lang: 'uk' } },
+  { path: '/hi', component: Content, props: { lang: 'hi' } },
   { path: '/zh', component: Content, props: { lang: 'zh' } },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]

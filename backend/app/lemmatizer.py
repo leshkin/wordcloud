@@ -5,8 +5,10 @@ import fr_core_news_sm
 import langid
 import pt_core_news_sm
 import ru_core_news_sm
+import xx_ent_wiki_sm
 import zh_core_web_sm
 
+nlp_xx = xx_ent_wiki_sm.load()
 nlp_en = en_core_web_sm.load()
 nlp_ru = ru_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
 nlp_fr = fr_core_news_sm.load(disable=["tagger", "parser", "ner", "textcat"])
@@ -18,7 +20,9 @@ nlp_zh = zh_core_web_sm.load(disable=["ner"])
 
 def get_lemmas(text):
     lang = langid.classify(text)[0]
-    if lang == "ru":
+    if lang == "en":
+        doc = nlp_en(text)
+    elif lang == "ru":
         doc = nlp_ru(text)
     elif lang == "fr":
         doc = nlp_fr(text)
@@ -31,7 +35,7 @@ def get_lemmas(text):
     elif lang == "zh":
         doc = nlp_zh(text)
     else:
-        doc = nlp_en(text)
+        doc = nlp_xx(text)
 
     lemmas = []
     for token in doc:
