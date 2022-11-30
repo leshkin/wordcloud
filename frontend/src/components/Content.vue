@@ -210,7 +210,7 @@ const redraw = () => {
                     @click="redraw()"
                     :class="{ 'is-loading': isRedrawing }"
                   >
-                    Redraw
+                    {{ t('redraw') }}
                   </button>
                 </div>
               </div>
