@@ -52,8 +52,17 @@ def get_lemmas(text):
                 lemmas.append(token.text)
             else:
                 lemmas.append(capitalize_by_shape(token))
-
-    return {'lang': lang, 'words': frequency_bag_from_list(lemmas)}
+    
+    # We can get "Amour" and "amour" after SpaCy lemmatization.
+    # Change them to "amour" and "amour" to get correct stats.
+    lemmas_corrected = []
+    for lemma in lemmas:
+        lemma_lower = lemma.lower()
+        if lemma_lower in lemmas:
+            lemmas_corrected.append(lemma_lower)
+        else:
+            lemmas_corrected.append(lemma)
+    return {'lang': lang, 'words': frequency_bag_from_list(lemmas_corrected)}
 
 
 def capitalize_by_shape(token):
