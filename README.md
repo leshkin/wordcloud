@@ -84,3 +84,11 @@
    cd wordcloud
    docker stack deploy --compose-file docker-compose.yml wordcloud
    ```
+
+### Autodeploy with GitHub Actions
+
+Add and push a new tag
+
+```bash
+git push origin v1.0.0
+```
