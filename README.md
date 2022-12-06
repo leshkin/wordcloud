@@ -6,7 +6,7 @@
 
 ### Word cloud for "1984, George Orwell, 1st chapter"
 
-![Word cloud for "1984, George Orwell, 1st chapter"](https://wordcloud.online/wordcloud-1984.png)
+![Word cloud for 1984, George Orwell, 1st chapter](https://wordcloud.online/wordcloud-1984.png)
 
 ## Development
 

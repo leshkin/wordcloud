@@ -20,7 +20,7 @@ export const messages = {
     testimonials: 'Testimonials',
   },
   ru: {
-    title: 'Облако слов - создать онлайн и бесплатно',
+    title: 'Облако слов - создать облако тегов онлайн и бесплатно',
     info: 'Word Cloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение. При этом слова текста приводятся к нормальной форме (лемматизируются).',
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать облако слов',
@@ -40,7 +40,7 @@ export const messages = {
     testimonials: 'Отзывы',
   },
   es: {
-    title: 'Nube de palabras — generador de nube de palabras en línea',
+    title: 'Nube de palabras — generador de nube de etiquetas en línea gratis',
     info: 'Word Cloud le permite crear una nube de palabras en línea a partir de cualquier texto y descargar la imagen resultante. Las palabras del texto están lematizadas.',
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar nube de palabras',
@@ -80,7 +80,7 @@ export const messages = {
     testimonials: 'Referenzen',
   },
   fr: {
-    title: 'Nuage de mots - Générateur en ligne gratuit',
+    title: 'Nuage de mots - générateur de nuage de tags en ligne gratuit',
     info: "Word Cloud vous permet de créer un nuage de mots en ligne à partir de n'importe quel texte et de télécharger l'image résultante. Les mots du texte sont lemmatisés.",
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire nuage de mots',
@@ -101,7 +101,7 @@ export const messages = {
   },
   // Portuguese
   pt: {
-    title: 'Nuvem de palavras - Gerador Online Gratuito',
+    title: 'Nuvem de palavras - gerador de nuvem de tags on-line gratuito',
     info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante. As palavras do texto são lematizadas.',
     placeholder: 'Insira texto para criar uma nuvem de palavras',
     generate: 'Gerar nuvem de palavras',
