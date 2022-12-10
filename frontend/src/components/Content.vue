@@ -319,6 +319,29 @@ const redraw = () => {
           </div>
         </div>
       </div>
+
+      <div class="card mb-3">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="/misha.jpg" alt="Avatar" />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Misha Bruno</p>
+              <p class="subtitle is-6">
+                <a
+                  href="https://datadrivenlanguagelearning.blogspot.com/2022/11/top-5-free-word-cloud-generators-in-2022.html"
+                  >Best free word cloud generators for language learning in 2022</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="content">A service that allowed me to quickly build a pretty word cloud with little effort.</div>
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-content">
           <div class="media">
