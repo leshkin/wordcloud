@@ -67,6 +67,9 @@ switch (router.currentRoute.value.path) {
 }
 
 useHead({
+  htmlAttrs: {
+    lang: locale.value,
+  },
   title: t('title'),
   meta: [
     {
@@ -164,11 +167,7 @@ const redraw = () => {
 </script>
 
 <template>
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <span class="navbar-item is-size-1 has-text-dark has-text-weight-bold ff-lobster">Word Cloud</span>
-    </div>
-  </nav>
+  <h1 class="is-size-1 has-text-centered has-text-dark has-text-weight-bold ff-lobster">{{ t('header') }}</h1>
   <section class="m-2">
     <div class="container is-max-desktop">
       <article v-if="isError" class="message is-danger">

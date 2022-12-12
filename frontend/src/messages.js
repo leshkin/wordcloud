@@ -1,5 +1,6 @@
 export const messages = {
   en: {
+    header: 'Word Cloud',
     title: 'Word Cloud - Free Online Tag Cloud Generator',
     info: 'Word Cloud is a tool to create a word cloud online from your text and download the resulting image for free.',
     placeholder: 'Insert text to create a word cloud',
@@ -20,8 +21,9 @@ export const messages = {
     testimonials: 'Testimonials',
   },
   ru: {
+    header: 'Облако слов',
     title: 'Облако слов - создать облако тегов онлайн и бесплатно',
-    info: 'Word Cloud позволяет создать облако слов онлайн из любого текста и скачать получившееся изображение. При этом слова текста приводятся к нормальной форме (лемматизируются).',
+    info: 'Онлайн-сервис "Облако слов" позволяет создать облако слов (облако тегов) из любого текста и скачать получившееся изображение. При этом слова текста приводятся к нормальной форме (лемматизируются).',
     placeholder: 'Вставьте текст для создания облака слов',
     generate: 'Создать облако слов',
     redraw: 'Перерисовать',
@@ -40,8 +42,9 @@ export const messages = {
     testimonials: 'Отзывы',
   },
   es: {
+    header: 'Nube de palabras',
     title: 'Nube de palabras — generador de nube de etiquetas en línea gratis',
-    info: 'Word Cloud le permite crear una nube de palabras en línea a partir de cualquier texto y descargar la imagen resultante. Las palabras del texto están lematizadas.',
+    info: 'Nube de palabras es una herramienta para crear una nube de palabras en línea a partir de su texto y descargar la imagen resultante de forma gratuita.',
     placeholder: 'Insertar texto para crear una nube de palabras',
     generate: 'Generar nube de palabras',
     redraw: 'Redibujar',
@@ -60,8 +63,9 @@ export const messages = {
     testimonials: 'Testimonios',
   },
   de: {
+    header: 'Wortwolke',
     title: 'Wortwolke - Kostenloser Online-Generator',
-    info: 'Mit Word Cloud können Sie aus jedem Text online eine Wortwolke erstellen und das resultierende Bild herunterladen. Die Wörter des Textes sind lemmatisiert.',
+    info: 'Wortwolke ist ein Tool, mit dem Sie online eine Wortwolke aus Ihrem Text erstellen und das resultierende Bild kostenlos herunterladen können.',
     placeholder: 'Fügen Sie Text ein, um eine Wortwolke zu erstellen',
     generate: 'Generieren Wortwolke',
     redraw: 'Neu zeichnen',
@@ -80,8 +84,9 @@ export const messages = {
     testimonials: 'Referenzen',
   },
   fr: {
+    header: 'Nuage de mots',
     title: 'Nuage de mots - générateur de nuage de tags en ligne gratuit',
-    info: "Word Cloud vous permet de créer un nuage de mots en ligne à partir de n'importe quel texte et de télécharger l'image résultante. Les mots du texte sont lemmatisés.",
+    info: "Nuage de mots est un outil pour créer un nuage de mots en ligne à partir de votre texte et télécharger gratuitement l'image résultante.",
     placeholder: 'Insérer du texte pour créer un nuage de mots',
     generate: 'Produire nuage de mots',
     redraw: 'Redessiner',
@@ -101,6 +106,7 @@ export const messages = {
   },
   // Portuguese
   pt: {
+    header: 'Word Cloud',
     title: 'Nuvem de palavras - gerador de nuvem de tags on-line gratuito',
     info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante. As palavras do texto são lematizadas.',
     placeholder: 'Insira texto para criar uma nuvem de palavras',
@@ -122,6 +128,7 @@ export const messages = {
   },
   // Turkish
   tr: {
+    header: 'Word Cloud',
     title: 'Kelime bulutu - Ücretsiz Çevrimiçi Etiket Bulutu Oluşturucu',
     info: 'Word Cloud, metninizden çevrimiçi bir kelime bulutu oluşturmak ve ortaya çıkan görüntüyü ücretsiz olarak indirmek için kullanılan bir araçtır.',
     placeholder: 'Kelime bulutu oluşturmak için metin ekleyin',
@@ -143,6 +150,7 @@ export const messages = {
   },
   // Polish
   pl: {
+    header: 'Word Cloud',
     title: 'Chmura słów — darmowy generator chmury tagów online',
     info: 'Word Cloud to narzędzie do tworzenia chmury słów online z tekstu i pobierania wynikowego obrazu za darmo.',
     placeholder: 'Wstaw tekst, aby utworzyć chmurę słów',
@@ -164,6 +172,7 @@ export const messages = {
   },
   // Filipino
   tl: {
+    header: 'Word Cloud',
     title: 'Word Cloud - Libreng Online Tag Cloud Generator',
     info: 'Ang Word Cloud ay isang tool upang lumikha ng isang word cloud online mula sa iyong teksto at i-download ang resultang larawan nang libre.',
     placeholder: 'Maglagay ng text para gumawa ng word cloud',
@@ -185,6 +194,7 @@ export const messages = {
   },
   // Ukrainian
   uk: {
+    header: 'Word Cloud',
     title: 'Хмара слів – безкоштовний онлайн-генератор хмари тегів',
     info: 'Word Cloud — це інструмент для створення онлайн-хмари слів із вашого тексту та безкоштовного завантаження отриманого зображення.',
     placeholder: 'Вставте текст, щоб створити хмару слів',
@@ -206,6 +216,7 @@ export const messages = {
   },
   // Hindi
   hi: {
+    header: 'Word Cloud',
     title: 'वर्ड क्लाउड - मुफ्त ऑनलाइन टैग क्लाउड जनरेटर',
     info: 'वर्ड क्लाउड आपके टेक्स्ट से ऑनलाइन एक शब्द क्लाउड बनाने और परिणामी छवि को मुफ्त में डाउनलोड करने का एक उपकरण है।',
     placeholder: 'शब्द क्लाउड बनाने के लिए टेक्स्ट डालें',
@@ -227,6 +238,7 @@ export const messages = {
   },
   // Chinese Simplified
   zh: {
+    header: 'Word Cloud',
     title: '词云 - 免费在线生成器',
     info: 'Word Cloud 允许您从任何文本在线构建词云并下载生成的图像。文本的单词被词形还原。',
     placeholder: '插入文本以创建词云',
