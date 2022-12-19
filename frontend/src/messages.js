@@ -106,7 +106,7 @@ export const messages = {
   },
   // Portuguese
   pt: {
-    header: 'Word Cloud',
+    header: 'Nuvem de palavras',
     title: 'Nuvem de palavras - gerador de nuvem de tags on-line gratuito',
     info: 'O Word Cloud permite que você crie uma nuvem de palavras online a partir de qualquer texto e baixe a imagem resultante. As palavras do texto são lematizadas.',
     placeholder: 'Insira texto para criar uma nuvem de palavras',
@@ -128,7 +128,7 @@ export const messages = {
   },
   // Turkish
   tr: {
-    header: 'Word Cloud',
+    header: 'Kelime Bulutu',
     title: 'Kelime bulutu - Ücretsiz Çevrimiçi Etiket Bulutu Oluşturucu',
     info: 'Word Cloud, metninizden çevrimiçi bir kelime bulutu oluşturmak ve ortaya çıkan görüntüyü ücretsiz olarak indirmek için kullanılan bir araçtır.',
     placeholder: 'Kelime bulutu oluşturmak için metin ekleyin',
@@ -150,7 +150,7 @@ export const messages = {
   },
   // Polish
   pl: {
-    header: 'Word Cloud',
+    header: 'Chmura słów',
     title: 'Chmura słów — darmowy generator chmury tagów online',
     info: 'Word Cloud to narzędzie do tworzenia chmury słów online z tekstu i pobierania wynikowego obrazu za darmo.',
     placeholder: 'Wstaw tekst, aby utworzyć chmurę słów',
@@ -194,7 +194,7 @@ export const messages = {
   },
   // Ukrainian
   uk: {
-    header: 'Word Cloud',
+    header: 'Хмара слів',
     title: 'Хмара слів – безкоштовний онлайн-генератор хмари тегів',
     info: 'Word Cloud — це інструмент для створення онлайн-хмари слів із вашого тексту та безкоштовного завантаження отриманого зображення.',
     placeholder: 'Вставте текст, щоб створити хмару слів',
