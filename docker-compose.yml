@@ -1,27 +1,47 @@
-version: '3'
+version: '3.3'
 
 services:
+  traefik:
+    image: traefik:v2.9
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.web.http.redirections.entryPoint.to=websecure
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
+      - --certificatesresolvers.myresolver.acme.tlschallenge=true
+      - --certificatesresolvers.myresolver.acme.email=alaposhin@gmail.com
+      - --certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./letsencrypt:/letsencrypt
+
+
   frontend:
-    image: 1eshkin/wordcloud-frontend:0.7.0
+    image: 1eshkin/wordcloud-frontend:1.0.5
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.frontend.rule=Host(`wordcloud.online`) || Host(`www.wordcloud.online`)
+      - traefik.http.routers.frontend.entrypoints=websecure
+      - traefik.http.routers.frontend.tls.certresolver=myresolver
+      - traefik.http.routers.frontend.middlewares=www
+      - traefik.http.middlewares.www.redirectregex.regex=^https://www.wordcloud.online/(.*)
+      - traefik.http.middlewares.www.redirectregex.replacement=https://wordcloud.online/$$1
+      - traefik.http.middlewares.www.redirectregex.permanent=true
 
   backend:
-    image: 1eshkin/wordcloud-backend:0.5.1
+    image: 1eshkin/wordcloud-backend:0.5.3
     environment:
       - MAX_WORKERS=1
     volumes:
       - ./logs:/app/logs
-    deploy:
-      resources:
-        limits:
-          memory: 700M
-
-  proxy:
-    image: jonasal/nginx-certbot:1.2.0-nginx1.19.8
-    ports:
-      - 80:80/tcp
-      - 443:443/tcp
-    environment:
-      - CERTBOT_EMAIL=alaposhin@gmail.com
-    volumes:
-      - ./proxy/conf.d:/etc/nginx/conf.d
-      - ./proxy/letsencrypt:/etc/letsencrypt
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.backend.rule=Host(`api.wordcloud.online`)
+      - traefik.http.routers.backend.entrypoints=websecure
+      - traefik.http.routers.backend.tls.certresolver=myresolver

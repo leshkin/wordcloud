@@ -1,11 +1,20 @@
-<script setup>
-import { watch } from 'vue'
-import { select } from 'd3'
-import cloud from '/src/lib/d3-cloud.js'
-import { embedFonts } from '/src/lib/embed-fonts.js'
-import { getFontURL } from '/src/config.js'
+<template>
+  <div id="wordcloud" class="mb-5 border border-gray-300"></div>
+  <canvas id="wordcloud-canvas" class="hidden" width="1500" height="1500"></canvas>
+</template>
 
-const props = defineProps({ words: Array, font: Object, colorPalette: Object, update: Object })
+<script setup>
+import { select } from 'd3'
+import cloud from '~/lib/d3-cloud.js'
+import { embedFonts } from '~/lib/embed-fonts.js'
+import { getFontURL } from '~/config.js'
+
+const props = defineProps({
+  words: Array,
+  font: Object,
+  colorPalette: Object,
+  update: Object,
+})
 const emit = defineEmits(['update'])
 
 let layout
@@ -41,9 +50,8 @@ const draw = (words) => {
   select('#wordcloud').select('svg').remove()
   let svg = select('#wordcloud')
     .append('svg')
-    .attr('id', 'svg')
-    .attr('width', 500)
-    .attr('height', 500)
+    .attr('id', 'wordcloud-svg')
+    .attr('width', '100%')
     .attr('viewBox', '-250 -250 500 500')
 
   svg.append('defs').append('style').attr('type', 'text/css').text(css)
@@ -79,17 +87,3 @@ const draw = (words) => {
   emit('update')
 }
 </script>
-
-<template>
-  <div id="wordcloud" class="mb-5"></div>
-</template>
-
-<style>
-#wordcloud {
-  border: 1px solid #dddddd;
-}
-
-#wordcloud svg {
-  display: block;
-}
-</style>

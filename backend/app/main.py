@@ -3,6 +3,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 import app.lemmatizer as lemmatizer
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 # prepare logger
@@ -14,6 +15,20 @@ logger.setLevel(logging.INFO)
 logger.addHandler(handler)
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",
+    "http://wordcloud.localhost",
+    "https://wordcloud.online",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class Request(BaseModel):

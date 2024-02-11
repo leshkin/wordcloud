@@ -1,32 +1,24 @@
 {
-  "name": "wordcloud",
-  "version": "0.0.0",
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vite --port 3001 --open",
-    "dev-docker": "vite --host --port 3001",
-    "build": "cross-env NODE_ENV=production vite-ssg build",
-    "build-dev": "cross-env NODE_ENV=dev vite-ssg build",
-    "preview": "vite preview --port 5001 --open",
-    "build-preview": "npm run build && npm run preview",
-    "build-preview-dev": "npm run build-dev && npm run preview"
-  },
-  "dependencies": {
-    "@vueuse/core": "^6.8.0",
-    "@vueuse/head": "^0.7.2",
-    "axios": "^0.23.0",
-    "d3": "^7.0.1",
-    "vue": "^3.2.6",
-    "vue-i18n": "^9.1.7"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
-    "@vitejs/plugin-vue": "^1.6.0",
-    "@vue/compiler-sfc": "^3.2.10",
-    "@vue/server-renderer": "^3.2.10",
-    "cross-env": "^7.0.3",
-    "unplugin-vue-components": "^0.15.2",
-    "vite": "^2.5.2",
-    "vite-ssg": "^0.17.11",
-    "vue-router": "^4.0.11"
+    "@nuxtjs/i18n": "^8.0.0",
+    "@nuxtjs/tailwindcss": "^6.11.2",
+    "@vueuse/core": "^10.7.2",
+    "@vueuse/nuxt": "^10.7.2",
+    "nuxt": "^3.9.3",
+    "vue": "^3.4.14",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "d3": "^7.8.5"
   }
 }

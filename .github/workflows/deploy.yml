@@ -2,8 +2,7 @@ name: Build, push and deploy Docker images
 
 on:
   push:
-    tags:
-      - v1.*
+    branches: ['release']
 
 jobs:
   build-push-and-deploy-docker-images:

@@ -2,19 +2,15 @@ version: '3'
 
 services:
   frontend:
-    image: 1eshkin/wordcloud-frontend:0.6.0
+    image: 1eshkin/wordcloud-frontend:1.0.5
     ports:
-      - 8080:80/tcp
+      - 3000:80/tcp
 
   backend:
-    image: 1eshkin/wordcloud-backend:0.5.0
+    image: 1eshkin/wordcloud-backend:0.5.3
     environment:
       - MAX_WORKERS=1
     volumes:
       - ./logs:/app/logs
-    deploy:
-      resources:
-        limits:
-          memory: 700M
     ports:
       - 8080:80/tcp

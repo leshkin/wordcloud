@@ -6,14 +6,24 @@
 
 ### Word cloud for "1984, George Orwell, 1st chapter"
 
-![Word cloud for 1984, George Orwell, 1st chapter](https://wordcloud.online/wordcloud-1984.png)
+![Word cloud for 1984, George Orwell, 1st chapter](https://wordcloud.online/wordcloud-1984.jpg)
+
+## Run locally
+
+1. Run Docker
+
+```
+docker compose -f docker-compose.local.yml up
+```
+
+2. Open http://wordcloud.localhost
 
 ## Development
 
 1. Run backend
 
    ```bash
-   docker-compose -f docker-compose.dev.yml up
+   docker compose -f docker-compose.dev.yml up
    ```
 
 2. Run frontend
@@ -30,7 +40,7 @@
    docker-compose -f docker-compose.dev.yml up
    ```
 
-2. Open <http://localhost:8080>
+2. Open http://localhost:8080
 
 ## Install backend to virtual environment
 
@@ -58,7 +68,7 @@
 
 1. Build image for frontend
    ```bash
-   cd frontend # from the project directory
+   cd frontend
    docker build -t 1eshkin/wordcloud-frontend:x.x.x .
    ```
 2. Push frontend image to the Docker Hub
@@ -67,7 +77,7 @@
    ```
 3. Build image for backend
    ```bash
-   cd backend # from the project directory
+   cd backend
    docker build -t 1eshkin/wordcloud-backend:x.x.x .
    ```
 4. Push backend image to the Docker Hub
