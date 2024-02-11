@@ -23,7 +23,7 @@ services:
 
 
   frontend:
-    image: 1eshkin/wordcloud-frontend:1.0.5
+    image: 1eshkin/wordcloud-frontend:1.0.6
     labels:
       - traefik.enable=true
       - traefik.http.routers.frontend.rule=Host(`wordcloud.online`) || Host(`www.wordcloud.online`)

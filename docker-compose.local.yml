@@ -2,7 +2,7 @@ version: '3'
 
 services:
   frontend:
-    image: 1eshkin/wordcloud-frontend:1.0.5
+    image: 1eshkin/wordcloud-frontend:1.0.6
     ports:
       - 3000:80/tcp
 
